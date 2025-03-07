@@ -1,0 +1,121 @@
+{
+  "home": "Bosh sahifa",
+  "about": "Biz haqimizda",
+  "service": "Xizmatlar",
+  "contact": "Aloqa",
+  "tour": "Sayohatlar",
+  "banner": [
+    {
+      "title": "Mamlakatimiz Bo'ylab Sayohatlar",
+      "description": "O‘zbekiston bo‘ylab sayohat - tarix, madaniyat va tabiiy go‘zalliklar sizni kutmoqda! Samarqand, Buxoro va Xiva kabi qadimiy shaharlarni kashf qiling."
+    },
+    {
+      "title": "Dunyoga Sayohat",
+      "description": "Dunyoning eng go‘zal joylariga sayohat - yangi madaniyatlar, qiziqarli kashfiyotlar! Parij, Dubay, Istanbul yoki Maldiv orollariga sayohat qiling."
+    },
+    {
+      "title": "Tibbiy Turizm",
+      "description": "Sifatli tibbiy xizmatlar va zamonaviy muolajalar bilan sog‘lig‘ingizni mustahkamlash! Dunyoning ilg‘or klinikalarida davolanish imkoniyati."
+    }
+  ],
+  "aboutUs": {
+    "title": "Biz Haqimizda",
+    "description": "\"HADIYA UNIVERSAL GROUPE\" MCHJ 2022-yilda tashkil etilgan bo‘lib, Toshkent shahri, Shayxontohur tumani, Samarqand darvoza 6-uy manzilida joylashgan. Biz turizm sohasida yetakchi xizmatlar taklif etamiz: O‘zbekiston bo‘ylab turizm, dunyo bo‘ylab turizm, meditsina turizm, viza xizmatlari va biletlar.",
+    "button": "Batafsil",
+    "contact": "Savollaringiz bormi",
+    "manager": "Direktor",
+    "managerName": "Ostonov Odiljon Behzod o’g’li",
+    "founded": "Tashkil topgan: 28-fevral 2023-yil",
+    "customers": "Mijozlar ishonchi"
+  },
+  "services": {
+    "title": "Bizning xizmatlar",
+    "flightTickets": "Aviachiptalar",
+    "flightTicketsDesc": "Dunyoning istalgan nuqtasiga eng qulay narxlarda aviachiptalar.",
+    "flightTicketsExtra": "Sayohatingizni rejalashtirishda tezkor xizmat va keng tanlov imkoniyatidan foydalaning, eng yaxshi aviakompaniyalar bilan hamkorlik qilamiz. Moslashuvchan bron qilish variantlari, chegirmali takliflar va maxsus paketlar bilan sayohatingizni yanada qulay va arzon qiling.",
+    "hotels": "Mehmonxonalar",
+    "hotelsDesc": "Har qanday did va ehtiyojga mos turar joy tanlash imkoniyati.",
+    "hotelsExtra": "Hashamatli 5 yulduzli mehmonxonalardan tortib, byudjetga mos arzon xonalargacha – dam olish yoki ish safarlari uchun eng yaxshi variantlarni topamiz. Qulay joylashuv, zamonaviy qulayliklar va yuqori darajadagi xizmat bilan ta’tilingizni unutilmas qilamiz, shuningdek, maxsus chegirmalar taqdim etamiz.",
+    "dining": "Ovqatlanish",
+    "diningDesc": "Mahalliy va xalqaro taomlardan bahramand bo’ling.",
+    "diningExtra": "O’ziga xos ta’mi bilan mashhur mahalliy taomlar va xalqaro oshxonaning eng yaxshi namunalarini tatib ko’ring, restoranlarimiz sizga eng yuqori sifatli xizmat taqdim etadi. Maxsus menyular, oshpazlarimizning ijodiy yondashuvi va muhitning o’ziga xos jozibasi bilan har bir taomdan zavq oling.",
+    "transfers": "Kutib olish va kuzatib qo’yish",
+    "transfersDesc": "Aeroportdan qulay va xavfsiz transport xizmatlari.",
+    "transfersExtra": "Mehmonxonaga yoki istalgan manzilga stresssiz yetib boring, chunki biz har bir detalga e’tibor beramiz. Professional haydovchilar, zamonaviy avtomobillar va moslashuvchan jadval bilan vaqtni tejang va qulaylikdan bahramand bo’ling.",
+    "guidesAndTours": "Gid va tur operatorlar",
+    "guidesAndToursDesc": "Tajribali gidlar va professional tur operatorlar bilan unutilmas sayohatlar.",
+    "guidesAndToursExtra": "Dunyoning eng muhim diqqatga sazovor joylarini kashf eting, tur operatorlarimiz tomonidan tashkil etilgan shaxsiy va guruhli turlar orqali sayohatingizni maxsus xotiraga aylantiramiz. Tajribali gidlarimiz mahalliy madaniyat, tarix va an’analar haqida chuqur ma’lumot beradi, shuningdek, maxsus marshrutlar va qo’shimcha xizmatlar bilan sayohatingizni yanada boyitamiz.",
+    "visaServices": "Viza xizmatlari",
+    "visaServicesDesc": "Tez va ishonchli viza rasmiylashtirish yordami.",
+    "visaServicesExtra": "Xorijiy sayohatlar uchun hujjatlaringizni tayyorlashda to’liq yordam beramiz, jarayonni soddalashtiramiz. Mutaxassislarimizning maslahatlari, tezkor xizmat va har bir mamlakat talablariga mos yondashuv bilan viza olishni osonlashtiramiz."
+  },
+  "partners": {
+    "title": "Bizning hamkorlarimiz"
+  },
+  "contactInfo": "Bizga savollaringiz bormi ?",
+  "fullName": "Ism Familiyangiz",
+  "fullNamePlaceholder": "Ismingiz va familiyangizni kiriting",
+  "phone": "Telefon raqamingiz",
+  "message": "Xabar",
+  "messagePlaceholder": "Savolingizni qoldiring",
+  "submit": "Xabar yuborish",
+  "modalTitle": "Xabaringiz yuborildi!",
+  "modalMessage": "Sizning xabaringiz yetkazildi, tez orada siz bilan bog‘lanamiz.",
+  "close": "Ortga",
+  "errors": {
+    "fullName": "Ism va familiyangizni kiriting",
+    "phoneRequired": "Telefon raqamingizni kiriting",
+    "phoneInvalid": "Telefon raqami noto‘g‘ri, 9 xonali bo‘lishi kerak",
+    "message": "Savol yoki takliflaringizni yozing"
+  },
+  "customer_reviews": "Mijozlarimiz Fikri",
+  "traveler": "Sayohatchi",
+  "aziza": "Aziza Xo‘jayeva",
+  "umid": "Umidjon",
+  "dilshod": "Dilshod Rahimov",
+  "marina": "Marina Petrova",
+  "ahmadjon": "Ahmadjon Qosimov",
+  "abdulaziz": "Abdulaziz",
+  "nargiza": "Nargiza To‘xtayeva",
+  "ravshan": "Ravshan Ergashev",
+  "abbos": "Abbos",
+  "world_traveler": "Dunyo sayyohi",
+  "medical_tourist": "Tibbiy turist",
+  "photographer": "Fotograf",
+  "businessman": "Biznesmen",
+  "student": "Talaba",
+  "pensioner": "Pensioner",
+  "blogger": "Bloger",
+  "teacher": "O‘qituvchi",
+  "review_1": "O‘zbekiston bo‘ylab sayohatim ajoyib bo‘ldi!",
+  "review_2": "Bu kompaniya bilan dunyo bo‘ylab sayohat qildim!",
+  "review_3": "Tibbiy xizmat juda yuqori darajada edi!",
+  "review_4": "Eng yaxshi suratlarimni oldim!",
+  "review_5": "Operatsiyam muvaffaqiyatli o‘tdi, rahmat!",
+  "review_6": "Italiya ajoyib edi!",
+  "review_7": "Tarix va madaniyatni his qilish uchun eng yaxshi tanlov!",
+  "review_8": "Sayohatim menga yangi hayot baxsh etdi!",
+  "review_9": "Eng yaxshi tajribani taqdim etdi!",
+  "review_10": "Unutilmas dam oldim!",
+  "ourTours": "Ichki turizm",
+  "inDetail": "Batafsil",
+  "uzs": "so'm",
+  "tours": {
+    "xiva": {
+      "title": "XORAZM Tarixiy Sayohati (Toshkentdan borish)",
+      "day": "5 kunlik sayohatda",
+      "description": "Ichan Qalʼa, Pahlavon Mahmud maqbarasi, Xo’ja Islom maqbarasi, Sayid Alouddin maqbarasi, Kalta Minor, Juma masjidi, Tosh-Hovli saroyi, Ko’hna Ark, Xo’ja Kalon maqbarasi, Xo’ja Tolib maqbarasi, Muhammad Aminxon madrasasi"
+    },
+    "samarkand": {
+      "title": "Samarqand Tarixiy Sayohati (Toshkentdan borish)",
+      "day": "1 kunlik sayohatda",
+      "description": "Registon maydoni, Imom Al-Buhoriy ziyoratgohi, I.Karimov ziyoratgohi, Siyob bozori va boshqalar."
+    },
+    "bukhara": {
+      "title": "Buxoro Muqaddas Yodgorliklari (Toshkentdan borish)",
+      "day": "3 kunlik sayohatda",
+      "description": "Yetti Pir ziyoratgohi, Buxoro Arki, Labi Hovuz, Chashmai Ayub maqbarasi."
+    }
+  }
+
+}

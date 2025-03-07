@@ -1,0 +1,119 @@
+{
+  "home": "Home",
+  "about": "About",
+  "service": "Services",
+  "contact": "Contact",
+  "tour": "Travels",
+  "banner": [
+    {
+      "title": "Travel Across Our Country",
+      "description": "Travel across Uzbekistan - history, culture, and natural beauty await you! Discover ancient cities like Samarkand, Bukhara, and Khiva."
+    },
+    {
+      "title": "Travel the World",
+      "description": "Travel to the most beautiful places in the world - new cultures, exciting discoveries! Visit Paris, Dubai, Istanbul, or the Maldives."
+    },
+    {
+      "title": "Medical Tourism",
+      "description": "High-quality medical services and modern treatments to improve your health! Get treatment in leading clinics around the world."
+    }
+  ],
+  "aboutUs": {
+    "title": "About Us",
+    "description": "\"HADIYA UNIVERSAL GROUPE\" LLC was established in 2022 and is located at Tashkent city, Shaykhantakhur district, Samarkand Gate 6. We offer leading tourism services: Uzbekistan tourism, worldwide tours, medical tourism, visa services, and tickets. Contact us: Instagram: @hadiyatravel, Telegram: @hadiyatravel, TikTok: @hadiyatravel.",
+    "button": "Detailed",
+    "manager": "Director",
+    "managerName": "Ostonov Odiljon Behzodovich",
+    "founded": "Founded: February 28, 2023",
+    "customers": "Trusted by Customers"
+  },
+  "services": {
+    "title": "Our Services",
+    "flightTickets": "Flight Tickets",
+    "flightTicketsDesc": "Best-priced flight tickets worldwide.",
+    "flightTicketsExtra": "Enjoy a fast booking process, a wide range of flight options, and partnerships with top airlines. Flexible booking options, exclusive discounts, and tailored travel packages make your journey smoother and more affordable.",
+    "hotels": "Hotels",
+    "hotelsDesc": "Accommodations for every preference.",
+    "hotelsExtra": "From luxurious five-star hotels to budget-friendly stays, we find the perfect spot for your vacation or business trip. Prime locations, modern amenities, and top-notch service ensure a memorable stay, with special discounts for our clients.",
+    "dining": "Dining",
+    "diningDesc": "Local and international cuisine awaits.",
+    "diningExtra": "Indulge in authentic local flavors and the finest international dishes, with exceptional quality and service in our restaurants. Special menus, our chefs’ creative flair, and a charming ambiance turn every meal into a memorable occasion.",
+    "transfers": "Airport Transfers",
+    "transfersDesc": "Safe and comfortable airport transportation.",
+    "transfersExtra": "Reach your hotel or destination stress-free, with every detail handled by our team. Professional drivers, modern vehicles, and a flexible schedule save you time while ensuring maximum comfort.",
+    "guidesAndTours": "Guides & Tour Operators",
+    "guidesAndToursDesc": "Unforgettable trips with expert guides and professional tour operators.",
+    "guidesAndToursExtra": "Explore the world’s most iconic landmarks with personalized and group tours organized by our tour operators, turning your trip into a special memory. Our experienced guides provide deep insights into local culture, history, and traditions, while bespoke itineraries and additional services enhance your travel experience.",
+    "visaServices": "Visa Services",
+    "visaServicesDesc": "Fast and reliable visa assistance.",
+    "visaServicesExtra": "Comprehensive help with documentation for international travel, simplifying the process. Expert guidance, prompt service, and a tailored approach to each country’s requirements streamline your visa application."
+  },
+  "partners": {
+    "title": "Our Partners"
+  },
+  "contactInfo": "Do you have any questions for us ?",
+  "fullName": "Your full name",
+  "fullNamePlaceholder": "Enter your first and last name",
+  "phone": "Your phone number",
+  "message": "Message",
+  "messagePlaceholder": "Leave your question",
+  "submit": "Send message",
+  "modalTitle": "Your message has been sent!",
+  "modalMessage": "Your message has been delivered. We will contact you soon.",
+  "close": "Back",
+  "errors": {
+    "fullName": "Please enter your full name",
+    "phoneRequired": "Please enter your phone number",
+    "phoneInvalid": "Invalid phone number, it should be 9 digits",
+    "message": "Write your question or suggestion"
+  },
+  "customer_reviews": "Customer Reviews",
+  "traveler": "Traveler",
+  "aziza": "Aziza Khojayeva",
+  "umid": "Umidjon",
+  "dilshod": "Dilshod Rahimov",
+  "marina": "Marina Petrova",
+  "ahmadjon": "Ahmadjon Kosimov",
+  "abdulaziz": "Abdulaziz",
+  "nargiza": "Nargiza Tohtayeva",
+  "ravshan": "Ravshan Ergashev",
+  "abbos": "Abbos",
+  "world_traveler": "World Traveler",
+  "medical_tourist": "Medical Tourist",
+  "photographer": "Photographer",
+  "businessman": "Businessman",
+  "student": "Student",
+  "pensioner": "Pensioner",
+  "blogger": "Blogger",
+  "teacher": "Teacher",
+  "review_1": "My trip to Uzbekistan was amazing!",
+  "review_2": "I traveled the world with this company!",
+  "review_3": "The medical service was top-notch!",
+  "review_4": "I took my best photos here!",
+  "review_5": "My operation was successful, thank you!",
+  "review_6": "Italy was amazing!",
+  "review_7": "The best choice to feel history and culture!",
+  "review_8": "My trip gave me a new life!",
+  "review_9": "They provided the best experience!",
+  "review_10": "I had an unforgettable rest!",
+  "ourTours": "Domestic tourism",
+  "inDetail": "More details",
+  "uzs": "UZS",
+  "tours": {
+    "xiva": {
+      "title": "Khorezm Historical Tour (Departure from Tashkent)",
+      "day": "5-day trip",
+      "description": "Ichan Kala, Pahlavon Mahmud Mausoleum, Khoja Islam Mausoleum, Sayid Alouddin Mausoleum, Kalta Minor, Juma Mosque, Tosh-Hovli Palace, Kohna Ark, Khoja Kalon Mausoleum, Khoja Tolib Mausoleum, Muhammad Amin Khan Madrasa"
+    },
+    "samarkand": {
+      "title": "Samarkand Historical Tour (Departure from Tashkent)",
+      "day": "1-day trip",
+      "description": "Registan Square, Imam Al-Bukhari Mausoleum, I. Karimov Mausoleum, Siyob Bazaar, and more."
+    },
+    "bukhara": {
+      "title": "Bukhara Sacred Landmarks (Departure from Tashkent)",
+      "day": "3-day trip",
+      "description": "Yetti Pir Mausoleum, Bukhara Ark, Labi Hauz, Chashma Ayub Mausoleum."
+    }
+  }
+}
