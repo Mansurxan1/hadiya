@@ -7,7 +7,7 @@ import "../I18n/i18n";
 import Navbar from "../components/Navbar";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const { i18n, t } = useTranslation();
+  const { i18n } = useTranslation();
   const [lang, setLang] = useState("uz");
 
   useEffect(() => {
