@@ -6,7 +6,7 @@ import axios from "axios";
 import { useTranslation } from "react-i18next";
 
 const Maps: NextPage = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("+998");
   const [message, setMessage] = useState("");
@@ -98,9 +98,6 @@ const Maps: NextPage = () => {
     };
   }, [isModalOpen]);
 
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-  };
 
   return (
     <div className="flex items-center justify-center p-5">

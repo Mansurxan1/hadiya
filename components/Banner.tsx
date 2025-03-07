@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 const bannerData = [
   {
     id: 1,
-    imageUrl: "/banner.jpg",
+    imageUrl: "/registan.jpg",
   },
   {
     id: 2,
