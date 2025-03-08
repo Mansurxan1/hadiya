@@ -9,6 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
+        "phone-min": "320px",
+        "phone-max": "420px",
         "md-lg": "1000px",
       },
       animation: {

@@ -34,20 +34,20 @@ export default function ServicesSection() {
   };
 
   return (
-    <section id="services" className="pb-16 pt-8 bg-gradient-to-b text-white">
+    <section id="services" className="pb-7 bg-gradient-to-b text-white">
       <div className="max-w-[1700px] mx-auto px-5">
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }} 
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-3xl md:text-5xl text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-green-500 pb-10"
+          className="text-2xl md:text-3xl text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-green-500 pb-5"
         >
           {t("services.title")}
         </motion.h2>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -60,13 +60,13 @@ export default function ServicesSection() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.3 }} 
-              className="relative group bg-gray-800/50 p-6 rounded-xl shadow-lg hover:shadow-green-500/50 transition-shadow duration-300 transform hover:-translate-y-2"
+              className="relative group bg-gray-800/50 p-3 rounded-xl shadow-lg hover:shadow-green-500/50 transition-shadow duration-300 transform hover:-translate-y-2"
             >
-              <h3 className="text-xl text-center font-semibold text-green-300 mb-4 relative z-10">
+              <h3 className="text-lg md:text-xl text-center font-semibold text-green-300 mb-2 relative z-10">
                 {t(service.title)}
               </h3>
-              <p className="text-gray-300 mb-3 relative z-10">{t(service.desc)}</p>
-              <p className="text-gray-400 text-sm relative z-10">{t(service.extra)}</p>
+              <p className="text-gray-300 text-lg mb-1 relative z-10">{t(service.desc)}</p>
+              <p className="text-gray-400 text-base relative z-10">{t(service.extra)}</p>
             </motion.div>
           ))}
         </motion.div>

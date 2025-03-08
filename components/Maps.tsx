@@ -4,6 +4,7 @@ import type { NextPage } from "next";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
+import { FaSpinner } from "react-icons/fa";
 
 const Maps: NextPage = () => {
   const { t } = useTranslation();
@@ -12,6 +13,8 @@ const Maps: NextPage = () => {
   const [message, setMessage] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [errors, setErrors] = useState<{ fullName?: string; phone?: string; message?: string }>({});
+  const [isLoading, setIsLoading] = useState(false); 
+  const [errorMessage, setErrorMessage] = useState(""); 
 
   const mapUrl = `https://static-maps.yandex.ru/1.x/?ll=69.211950,41.301972&z=17&l=map&size=600,400&pt=69.211950,41.301972,pm2rdm`;
   const yandexMapLink = "https://yandex.com/maps/?ll=69.211950,41.301972&z=17&pt=69.211950,41.301972,pm2rdm";
@@ -48,38 +51,49 @@ const Maps: NextPage = () => {
         text: text,
         parse_mode: "Markdown",
       });
+      setErrorMessage(""); 
     } catch (error) {
       console.error("Error sending to Telegram:", error);
+      setErrorMessage(t("technicalError"));
+      throw error; 
     }
   };
 
   const validateForm = () => {
-  const newErrors: { fullName?: string; phone?: string; message?: string } = {};
+    const newErrors: { fullName?: string; phone?: string; message?: string } = {};
 
-  if (!fullName.trim()) newErrors.fullName = t("errors.fullName");
+    if (!fullName.trim()) newErrors.fullName = t("errors.fullName");
 
-  const phoneDigits = phone.replace("+998", "").replace(/\s/g, "");
-  if (!phoneDigits) {
-    newErrors.phone = t("errors.phoneRequired"); 
-  } else if (phoneDigits.length !== 9) {
-    newErrors.phone = t("errors.phoneInvalid");
-  }
+    const phoneDigits = phone.replace("+998", "").replace(/\s/g, "");
+    if (!phoneDigits) {
+      newErrors.phone = t("errors.phoneRequired");
+    } else if (phoneDigits.length !== 9) {
+      newErrors.phone = t("errors.phoneInvalid");
+    }
 
-  if (!message.trim()) newErrors.message = t("errors.message");
+    if (!message.trim()) newErrors.message = t("errors.message");
 
-  setErrors(newErrors);
-  return Object.keys(newErrors).length === 0;
-};
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
-      await sendToTelegram(fullName, phone, message);
-      setFullName("");
-      setPhone("+998");
-      setMessage("");
-      setErrors({});
-      setIsModalOpen(true);
+      setIsLoading(true); 
+      setErrorMessage("");
+
+      try {
+        await sendToTelegram(fullName, phone, message);
+        setFullName("");
+        setPhone("+998");
+        setMessage("");
+        setErrors({});
+        setIsModalOpen(true);
+      } catch (error) {
+      } finally {
+        setIsLoading(false); 
+      }
     }
   };
 
@@ -98,16 +112,15 @@ const Maps: NextPage = () => {
     };
   }, [isModalOpen]);
 
-
   return (
-    <div className="flex items-center justify-center p-5">
+    <section id="contact" className="flex items-center justify-center p-5">
       <div className="max-w-[1700px] w-full flex flex-col md-lg:flex-row gap-8 text-white">
-        <div className="w-full md-lg:w-1/2 p-6 rounded-xl shadow-xl flex flex-col justify-between bg-gray-800/70">
+        <div className="w-full md-lg:w-1/2 p-3 rounded-xl shadow-xl flex flex-col justify-between bg-gray-800/70">
           <div>
-            <h1 className="text-3xl font-bold text-center mb-6 text-green-400">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 text-green-400">
               {t("contactInfo")}
-            </h1>
-            <form onSubmit={handleSubmit} className="space-y-5">
+            </h2>
+            <form onSubmit={handleSubmit} className="space-y-2">
               <div>
                 <label htmlFor="fullName" className="block text-sm font-medium text-gray-300">
                   {t("fullName")}
@@ -117,7 +130,7 @@ const Maps: NextPage = () => {
                   id="fullName"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  className="mt-1 block w-full p-3 bg-gray-700/30 outline-none border border-gray-600 rounded-md text-white placeholder-gray-400"
+                  className="mt-1 block w-full p-2 focus:ring-green-500 focus:border-green-500 transition-all bg-gray-700/30 outline-none border border-gray-600 rounded-md text-white placeholder-gray-400 placeholder:text-sm"
                   placeholder={t("fullNamePlaceholder")}
                 />
                 {errors.fullName && <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>}
@@ -131,7 +144,7 @@ const Maps: NextPage = () => {
                   id="phone"
                   value={phone}
                   onChange={handlePhoneChange}
-                  className="mt-1 block w-full p-3 bg-gray-700/30 outline-none border border-gray-600 rounded-md text-white placeholder-gray-400 "
+                  className="mt-1 block w-full p-2 focus:ring-green-500 focus:border-green-500 transition-all bg-gray-700/30 outline-none border border-gray-600 rounded-md text-white"
                 />
                 {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
               </div>
@@ -143,7 +156,7 @@ const Maps: NextPage = () => {
                   id="message"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  className="mt-1 w-full p-3 bg-gray-700/30 outline-none border border-gray-600 rounded-md text-white placeholder-gray-400 focus:ring-green-500 focus:border-green-500 transition-all h-32 resize-none"
+                  className="mt-1 w-full p-1 px-2 bg-gray-700/30 outline-none border border-gray-600 rounded-md text-white placeholder-gray-400 focus:ring-green-500 focus:border-green-500 transition-all h-20 phone-max:h-32 resize-none"
                   placeholder={t("messagePlaceholder")}
                   rows={4}
                 />
@@ -151,21 +164,36 @@ const Maps: NextPage = () => {
               </div>
             </form>
           </div>
+
+          {errorMessage && (
+            <p className="text-red-500 text-sm mt-3 text-center">{errorMessage}</p>
+          )}
+
           <button
             type="submit"
             onClick={handleSubmit}
-            className="w-full text-white p-3 rounded-md bg-green-500 mt-5 font-semibold"
+            className={`w-full text-white p-2 rounded-xl bg-green-500 mt-5 font-semibold relative ${
+              isLoading ? "opacity-50 cursor-not-allowed" : ""
+            }`}
+            disabled={isLoading}
           >
-            {t("submit")}
+            {isLoading ? (
+              <div className="flex items-center justify-center">
+                <FaSpinner className="animate-spin h-5 w-5 mr-2 text-white" />
+                {t("loading")}
+              </div>
+            ) : (
+              t("submit")
+            )}
           </button>
         </div>
 
-        <div className="w-full md-lg:w-1/2 h-[550px] flex items-center">
+        <div className="w-full md-lg:w-1/2 h-[200px] phone-max:h-[300px] md-lg:h-auto flex items-center">
           <a href={yandexMapLink} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
             <img
               src={mapUrl}
               alt={t("mapAlt")}
-              className="w-full h-full object-cover rounded-xl shadow-xl hover:shadow-green-500/50 transition-shadow duration-300 cursor-pointer"
+              className="w-full h-full object-cover rounded-xl shadow-xl cursor-pointer"
               style={{ pointerEvents: "auto" }}
             />
           </a>
@@ -173,7 +201,7 @@ const Maps: NextPage = () => {
       </div>
 
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+        <div className="fixed inset-0 flex px-5 items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-gray-700 p-6 rounded-xl shadow-lg text-center max-w-md w-full">
             <h2 className="text-xl font-semibold text-green-300 mb-4">{t("modalTitle")}</h2>
             <p className="text-gray-300 mb-6">{t("modalMessage")}</p>
@@ -186,7 +214,7 @@ const Maps: NextPage = () => {
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 };
 

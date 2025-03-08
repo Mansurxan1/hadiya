@@ -1,7 +1,6 @@
 "use client";
 
 import { useTranslation } from "react-i18next";
-import Link from "next/link";
 import Image from "next/image";
 import { FaTelegram, FaTiktok } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
@@ -23,15 +22,22 @@ export default function AboutSection() {
   const yRight = useTransform(scrollYProgress, [0, 0.3], [50, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.5], [0.95, 1]);
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" }); 
+    }
+  };
+
   return (
-    <section id="about" ref={sectionRef} className="py-12 sm:py-16 relative overflow-hidden text-white">
+    <section id="about" ref={sectionRef} className="py-5 relative overflow-hidden text-white">
       <div className="max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-7 lg:gap-16">
           <motion.div
             style={{ opacity, y: yLeft }}
             className="w-full lg:w-1/2 text-center lg:text-left"
           >
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 mb-6 sm:mb-8">
+            <div className="flex w-full justify-center lg:justify-start items-center gap-4 sm:gap-6 mb-1 sm:mb-8">
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -44,16 +50,15 @@ export default function AboutSection() {
                   alt="Hadiya Travel Logo"
                   width={100}
                   height={100}
-                  className="rounded-full border-4 border-green-500/60 shadow-xl transition-all duration-500 group-hover:scale-105 group-hover:shadow-green-500/50 sm:w-[120px] sm:h-[120px]"
+                  className="rounded-full border-4 border-green-500/60 shadow-xl transition-all duration-500 group-hover:scale-105 group-hover:shadow-green-500/50 phone-min:w-[50px] sm:w-[100px] sm:h-[100px]"
                 />
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-green-400/30 to-transparent blur-xl opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
               </motion.div>
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl pb-4 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-white to-green-200 leading-tight tracking-tight"
+                className="text-2xl sm:text-3xl mt-4 lg:text-6xl pb-4 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-white to-green-200 leading-tight tracking-tight"
               >
                 {t("aboutUs.title")}
               </motion.h2>
@@ -89,14 +94,14 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-base sm:text-lg md:text-xl leading-relaxed bg-gray-800/50 py-2 px-4 rounded-lg text-gray-200 max-w-xl mx-auto lg:mx-0 mb-6 sm:mb-8"
+              className="text-base sm:text-lg md:text-xl leading-relaxed bg-gray-800/50 py-2 px-4 rounded-lg text-gray-200 lg:mx-0 mb-5"
             >
               {t("aboutUs.description")}
             </motion.p>
 
             <motion.div
               style={{ scale }}
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6"
+              className="flex flex-col phone-max:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-4"
             >
               <a
                 href="tel:+998970383833"
@@ -115,7 +120,7 @@ export default function AboutSection() {
 
           <motion.div
             style={{ opacity, y: yRight }}
-            className="w-full lg:w-1/2 flex flex-col items-center lg:items-end space-y-8 sm:space-y-10"
+            className="w-full lg:w-1/2 flex flex-col items-center lg:items-end space-y-4"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -124,7 +129,10 @@ export default function AboutSection() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6"
             >
-              <button id="contacts" className="relative border-2 border-green-500 overflow-hidden text-white font-semibold py-2 px-6 sm:py-3 sm:px-8 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl group">
+              <button
+                onClick={() => scrollToSection("contact")}
+                className="relative border-2 border-green-500 overflow-hidden text-white font-semibold py-2 px-6 sm:py-3 sm:px-8 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl group"
+              >
                 <span className="absolute inset-0 bg-green-600 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-in-out"></span>
                 <span className="relative z-10">{t("aboutUs.contact")}</span>
               </button>
@@ -138,10 +146,10 @@ export default function AboutSection() {
               className="flex flex-wrap justify-center lg:justify-end gap-4 sm:gap-6"
             >
               {[
-                { href: "mailto:idealjamoa1@gmail.com", icon: FiMail, label: "Email" },
-                { href: "https://instagram.com/hadiyatravel", icon: RiInstagramFill, label: "Instagram" },
                 { href: "https://t.me/hadiyatravel", icon: FaTelegram, label: "Telegram" },
+                { href: "https://instagram.com/hadiyatravel", icon: RiInstagramFill, label: "Instagram" },
                 { href: "https://tiktok.com/@hadiyatravel", icon: FaTiktok, label: "TikTok" },
+                { href: "mailto:idealjamoa1@gmail.com", icon: FiMail, label: "Email" },
               ].map((social, index) => (
                 <motion.a
                   key={index}

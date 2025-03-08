@@ -46,18 +46,18 @@ const Banner: React.FC = () => {
       >
         {bannerData.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="relative w-full h-[40vh] md:h-[70vh] lg:h-screen flex items-center">
+            <div className="relative w-full h-[60vh] md:h-[75vh] lg:h-screen flex items-center">
               <img
                 src={item.imageUrl}
                 alt={bannerTexts[index]?.title}
                 className="w-full h-full object-cover brightness-75"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#333b3f]/80 to-transparent"></div>
-              <div className="absolute text-white px-6 py-8 md:px-12 md:py-16">
-                <h2 className="text-3xl md:text-5xl font-bold mb-3 md:mb-5 drop-shadow-lg">
+              <div className="absolute left-0 top-1/2 transform -translate-y-1/2 text-white px-4 py-6 sm:px-6 sm:py-8 md:px-12 md:py-16 max-w-full">
+                <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-5 drop-shadow-lg">
                   {bannerTexts[index]?.title}
                 </h2>
-                <p className="text-lg md:text-xl text-green-200 font-medium w-full md:w-1/2 drop-shadow-md">
+                <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-green-200 font-medium w-full sm:w-3/4 md:w-1/2 drop-shadow-md">
                   {bannerTexts[index]?.description}
                 </p>
               </div>

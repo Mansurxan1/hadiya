@@ -6,21 +6,25 @@ import Maps from "@/components/Maps";
 import Partners from "@/components/Partners";
 import ServicesSection from "@/components/ServicesSection";
 import Tour from "@/components/Tour";
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Testimonials from "@/components/Testimonials";
 
 const Page = () => {
   const { t } = useTranslation();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []); 
+
   return (
     <main
       className="min-h-screen w-full bg-cover bg-center bg-no-repeat bg-fixed"
       style={{
-        backgroundImage: "url('/bg.jpg')", 
+        backgroundImage: "url('/bg.jpg')",
       }}
     >
-      <div className="min-h-screen w-full bg-black/60"> 
+      <div className="min-h-screen w-full bg-black/60">
         <Banner />
         <AboutSection />
         <Tour />

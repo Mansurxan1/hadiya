@@ -20,7 +20,7 @@
   ],
   "aboutUs": {
     "title": "Biz Haqimizda",
-    "description": "\"HADIYA UNIVERSAL GROUPE\" MCHJ 2022-yilda tashkil etilgan bo‘lib, Toshkent shahri, Shayxontohur tumani, Samarqand darvoza 6-uy manzilida joylashgan. Biz turizm sohasida yetakchi xizmatlar taklif etamiz: O‘zbekiston bo‘ylab turizm, dunyo bo‘ylab turizm, meditsina turizm, viza xizmatlari va biletlar.",
+    "description": "\"HADIYA UNIVERSAL GROUPE\" MCHJ 2023-yilda tashkil etilgan bo‘lib, Toshkent shahri, Shayxontohur tumani, Samarqand darvoza 6-uy manzilida joylashgan. Biz turizm sohasida yetakchi xizmatlar taklif etamiz: O‘zbekiston bo‘ylab turizm, dunyo bo‘ylab turizm, meditsina turizm, viza xizmatlari va biletlar.",
     "button": "Batafsil",
     "contact": "Savollaringiz bormi",
     "manager": "Direktor",
@@ -52,7 +52,7 @@
   "partners": {
     "title": "Bizning hamkorlarimiz"
   },
-  "contactInfo": "Bizga savollaringiz bormi ?",
+  "contactInfo": "Bizga savollaringiz bormi?",
   "fullName": "Ism Familiyangiz",
   "fullNamePlaceholder": "Ismingiz va familiyangizni kiriting",
   "phone": "Telefon raqamingiz",
@@ -62,6 +62,7 @@
   "modalTitle": "Xabaringiz yuborildi!",
   "modalMessage": "Sizning xabaringiz yetkazildi, tez orada siz bilan bog‘lanamiz.",
   "close": "Ortga",
+  "technicalError": "Texnik nosozlik iltimos birozdan keyin urinib ko'ring",
   "errors": {
     "fullName": "Ism va familiyangizni kiriting",
     "phoneRequired": "Telefon raqamingizni kiriting",
@@ -78,7 +79,7 @@
   "abdulaziz": "Abdulaziz",
   "nargiza": "Nargiza To‘xtayeva",
   "ravshan": "Ravshan Ergashev",
-  "abbos": "Abbos",
+
   "world_traveler": "Dunyo sayyohi",
   "medical_tourist": "Tibbiy turist",
   "photographer": "Fotograf",
@@ -99,6 +100,7 @@
   "review_10": "Unutilmas dam oldim!",
   "ourTours": "Ichki turizm",
   "inDetail": "Batafsil",
+  "loading": "Yuborilmoqda",
   "uzs": "so'm",
   "tours": {
     "xiva": {

@@ -24,14 +24,14 @@ export default function Partners() {
   const { t } = useTranslation(); 
 
   return (
-    <section className="pb-10 text-white">
+    <section className="pb-7 text-white">
       <div className="max-w-[1700px] mx-auto px-5">
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-3xl md:text-5xl text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-green-500 pb-12"
+          className="text-2xl md:text-3xl text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-green-500 pb-5"
         >
           {t("partners.title")} 
         </motion.h2>

@@ -20,7 +20,7 @@
   ],
   "aboutUs": {
     "title": "About Us",
-    "description": "\"HADIYA UNIVERSAL GROUPE\" LLC was established in 2022 and is located at Tashkent city, Shaykhantakhur district, Samarkand Gate 6. We offer leading tourism services: Uzbekistan tourism, worldwide tours, medical tourism, visa services, and tickets. Contact us: Instagram: @hadiyatravel, Telegram: @hadiyatravel, TikTok: @hadiyatravel.",
+    "description": "\"HADIYA UNIVERSAL GROUPE\" LLC was established in 2023 and is located at Tashkent city, Shaykhantakhur district, Samarkand Gate 6. We offer leading tourism services: Uzbekistan tourism, worldwide tours, medical tourism, visa services, and tickets. Contact us: Instagram: @hadiyatravel, Telegram: @hadiyatravel, TikTok: @hadiyatravel.",
     "button": "Detailed",
     "manager": "Director",
     "managerName": "Ostonov Odiljon Behzodovich",
@@ -51,7 +51,7 @@
   "partners": {
     "title": "Our Partners"
   },
-  "contactInfo": "Do you have any questions for us ?",
+  "contactInfo": "Do you have any questions for us?",
   "fullName": "Your full name",
   "fullNamePlaceholder": "Enter your first and last name",
   "phone": "Your phone number",
@@ -61,6 +61,7 @@
   "modalTitle": "Your message has been sent!",
   "modalMessage": "Your message has been delivered. We will contact you soon.",
   "close": "Back",
+  "technicalError": "Technical error. Please try again later.",
   "errors": {
     "fullName": "Please enter your full name",
     "phoneRequired": "Please enter your phone number",
@@ -98,6 +99,7 @@
   "review_10": "I had an unforgettable rest!",
   "ourTours": "Domestic tourism",
   "inDetail": "More details",
+  "loading": "Loading",
   "uzs": "UZS",
   "tours": {
     "xiva": {
