@@ -7,11 +7,9 @@ import Partners from "@/components/Partners";
 import ServicesSection from "@/components/ServicesSection";
 import Tour from "@/components/Tour";
 import React, { useEffect } from "react";
-import { useTranslation } from "react-i18next";
 import Testimonials from "@/components/Testimonials";
 
 const Page = () => {
-  const { t } = useTranslation();
 
   useEffect(() => {
     window.scrollTo(0, 0);

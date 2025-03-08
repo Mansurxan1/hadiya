@@ -1,10 +1,11 @@
-"use client"
+"use client";
 
 import type { NextPage } from "next";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import { FaSpinner } from "react-icons/fa";
+import Image from "next/image";
 
 const Maps: NextPage = () => {
   const { t } = useTranslation();
@@ -13,8 +14,8 @@ const Maps: NextPage = () => {
   const [message, setMessage] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [errors, setErrors] = useState<{ fullName?: string; phone?: string; message?: string }>({});
-  const [isLoading, setIsLoading] = useState(false); 
-  const [errorMessage, setErrorMessage] = useState(""); 
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const mapUrl = `https://static-maps.yandex.ru/1.x/?ll=69.211950,41.301972&z=17&l=map&size=600,400&pt=69.211950,41.301972,pm2rdm`;
   const yandexMapLink = "https://yandex.com/maps/?ll=69.211950,41.301972&z=17&pt=69.211950,41.301972,pm2rdm";
@@ -51,11 +52,11 @@ const Maps: NextPage = () => {
         text: text,
         parse_mode: "Markdown",
       });
-      setErrorMessage(""); 
-    } catch (error) {
-      console.error("Error sending to Telegram:", error);
+      setErrorMessage("");
+    } catch (error: any) {
+      console.error("Telegramga yuborishda xato:", error);
       setErrorMessage(t("technicalError"));
-      throw error; 
+      throw error;
     }
   };
 
@@ -80,7 +81,7 @@ const Maps: NextPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
-      setIsLoading(true); 
+      setIsLoading(true);
       setErrorMessage("");
 
       try {
@@ -92,7 +93,7 @@ const Maps: NextPage = () => {
         setIsModalOpen(true);
       } catch (error) {
       } finally {
-        setIsLoading(false); 
+        setIsLoading(false);
       }
     }
   };
@@ -190,9 +191,11 @@ const Maps: NextPage = () => {
 
         <div className="w-full md-lg:w-1/2 h-[200px] phone-max:h-[300px] md-lg:h-auto flex items-center">
           <a href={yandexMapLink} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
-            <img
+            <Image
               src={mapUrl}
               alt={t("mapAlt")}
+              width={600}
+              height={400}
               className="w-full h-full object-cover rounded-xl shadow-xl cursor-pointer"
               style={{ pointerEvents: "auto" }}
             />

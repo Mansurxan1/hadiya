@@ -25,7 +25,7 @@ export default function AboutSection() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" }); 
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 

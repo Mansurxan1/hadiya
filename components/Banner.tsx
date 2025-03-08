@@ -5,6 +5,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import { useTranslation } from "next-i18next";
 import "swiper/css";
 import "swiper/css/pagination";
+import Image from "next/image";
 
 const bannerData = [
   {
@@ -47,9 +48,11 @@ const Banner: React.FC = () => {
         {bannerData.map((item, index) => (
           <SwiperSlide key={index}>
             <div className="relative w-full h-[60vh] md:h-[75vh] lg:h-screen flex items-center">
-              <img
+              <Image
                 src={item.imageUrl}
-                alt={bannerTexts[index]?.title}
+                alt={bannerTexts[index]?.title || "Banner Image"}
+                width={1200}
+                height={675}
                 className="w-full h-full object-cover brightness-75"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#333b3f]/80 to-transparent"></div>

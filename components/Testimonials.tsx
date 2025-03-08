@@ -23,16 +23,16 @@ const testimonials: Testimonial[] = [
 
 const Testimonials: React.FC = () => {
   const { t } = useTranslation();
-  const [visibleCount, setVisibleCount] = useState(8); 
+  const [visibleCount, setVisibleCount] = useState(8);
 
   useEffect(() => {
     const updateCount = () => {
       if (window.innerWidth >= 1000) {
-        setVisibleCount(8); 
+        setVisibleCount(8);
       } else if (window.innerWidth >= 420) {
         setVisibleCount(4);
       } else {
-        setVisibleCount(3); 
+        setVisibleCount(3);
       }
     };
 
@@ -57,7 +57,9 @@ const Testimonials: React.FC = () => {
                 <h3 className="text-base md:text-xl font-semibold">{t(testimonial.name)}</h3>
                 <p className="text-xs text-gray-400">{t(testimonial.role)}</p>
               </div>
-              <p className="text-gray-200 text-sm md:text-base italic">"{t(testimonial.review)}"</p>
+              <p className="text-gray-200 text-sm md:text-base italic">
+                {t(testimonial.review).replace(/"/g, "&quot;")} {/* Qo‘shtirnoqlarni qochirish */}
+              </p>
             </div>
           ))}
         </div>

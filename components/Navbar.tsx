@@ -107,7 +107,7 @@ export default function Navbar() {
         <div className="flex items-center space-x-2">
           <a
             href="tel:+998970383833"
-            className="flex items-center p-2 text-[10px]  sm:text-lg bg-[#333b3f] text-white rounded-full border border-green-500 shadow-2xl hover:bg-green-500 transition-all duration-300"
+            className="flex items-center p-2 text-[10px] sm:text-lg bg-[#333b3f] text-white rounded-full border border-green-500 shadow-2xl hover:bg-green-500 transition-all duration-300"
           >
             <Phone size={18} className="mr-2 text-green-400 animate-pulse" />
             +998 97 038-38-33
@@ -128,7 +128,7 @@ export default function Navbar() {
                   onClick={() => changeLanguage("uz")}
                   className="block w-full cursor-pointer px-4 py-2 text-left hover:bg-green-500/20 transition-all duration-200"
                 >
-                  O'zbek
+                  O&apos;zbek
                 </button>
                 <button
                   onClick={() => changeLanguage("ru")}
@@ -146,7 +146,6 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* Hamburger Menu Tugmasi */}
           <button
             className="lg:hidden text-white relative w-10 h-10 flex items-center justify-center rounded-full bg-[#333b3f] border border-green-500 shadow-lg hover:bg-green-500/20 transition-all duration-300"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -173,20 +172,17 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Premium Mobil Menu */}
       {mobileMenuOpen && (
         <div
           className={`lg:hidden fixed inset-0 z-40 flex items-center justify-center ${
             mobileMenuOpen ? "animate-slideDown" : "animate-slideUp"
           }`}
         >
-          {/* Orqa fon overlay */}
           <div
             className="absolute inset-0 bg-gradient-to-b from-[#333b3f]/95 to-black/80 backdrop-blur-lg"
             onClick={() => setMobileMenuOpen(false)}
           ></div>
 
-          {/* Menu oynasi */}
           <div className="relative w-full max-w-md mx-4 p-6 bg-[#333b3f]/90 rounded-2xl shadow-2xl shadow-green-500/20 border border-green-500/30 transform transition-all duration-500 hover:scale-105">
             <div className="space-y-4">
               {navItems.map((item) => (
