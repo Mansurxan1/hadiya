@@ -2,7 +2,7 @@
 
 import type { NextPage } from "next";
 import { useState, useEffect } from "react";
-import axios from "axios";
+import axios, { AxiosError } from "axios"; // AxiosError import qilinadi
 import { useTranslation } from "react-i18next";
 import { FaSpinner } from "react-icons/fa";
 import Image from "next/image";
@@ -43,7 +43,7 @@ const Maps: NextPage = () => {
   };
 
   const sendToTelegram = async (fullName: string, phone: string, message: string) => {
-    const text = `📝 *${t("newMessage")}*\n👤 *${t("fullName")}:* ${fullName}\n📞 *${t("phone")}:* ${phone}\n💬 *${t("message")}:* ${message}`;
+    const text = `📝 *Yangi xabar*\n👤 *Ism familiya:* ${fullName}\n📞 *Telefon:* ${phone}\n💬 *Xabar:* ${message}`;
     const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
 
     try {
@@ -53,10 +53,16 @@ const Maps: NextPage = () => {
         parse_mode: "Markdown",
       });
       setErrorMessage("");
-    } catch (error: any) {
-      console.error("Telegramga yuborishda xato:", error);
-      setErrorMessage(t("technicalError"));
-      throw error;
+    } catch (error: unknown) { 
+      if (axios.isAxiosError(error)) {
+        console.error("Telegramga yuborishda xato (Axios):", error);
+        setErrorMessage(t("technicalError"));
+        throw error;
+      } else {
+        console.error("Telegramga yuborishda noma’lum xato:", error);
+        setErrorMessage(t("technicalError"));
+        throw error;
+      }
     }
   };
 
@@ -91,7 +97,6 @@ const Maps: NextPage = () => {
         setMessage("");
         setErrors({});
         setIsModalOpen(true);
-      } catch (error) {
       } finally {
         setIsLoading(false);
       }
