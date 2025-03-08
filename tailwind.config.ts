@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        "md-lg": "1000px", 
+        "md-lg": "1000px",
       },
       animation: {
         "pulse-slow": "pulse 6s ease-in-out infinite",

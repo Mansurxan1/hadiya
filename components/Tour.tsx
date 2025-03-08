@@ -18,7 +18,7 @@ const TourList = () => {
   if (!isMounted) return null;
 
   return (
-    <section className="py-16">
+    <section id="tours" className="py-16">
       <div className="max-w-[1700px] mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-12 bg-gradient-to-r from-green-300 to-green-500 bg-clip-text text-transparent">
           {t("ourTours")}

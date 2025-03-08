@@ -62,7 +62,7 @@ const Testimonials: React.FC = () => {
   return (
     <section className="py-6 text-white">
       <div className="max-w-[1700px] mx-auto px-5">
-        <h2 className="text-4xl font-bold text-center mb-12">
+        <h2 className="text-3xl font-bold text-center mb-12">
           {t("customer_reviews")}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

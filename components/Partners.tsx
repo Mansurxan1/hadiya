@@ -9,7 +9,6 @@ import "swiper/css";
 import "swiper/css/autoplay";
 
 const partners: string[] = [
-  "https://static.tildacdn.com/tild3065-3431-4465-b165-326430373066/air-kazakhstan-25048.svg",
   "https://static.tildacdn.com/tild3061-3839-4035-b135-313262643832/turkish-airlines-1.svg",
   "https://static.tildacdn.com/tild3735-6330-4662-b366-643563633232/aeroflot-russian-air.svg",
   "https://static.tildacdn.com/tild3064-3262-4766-b462-313264386332/qanot-sharq.svg",
@@ -48,7 +47,8 @@ export default function Partners() {
           breakpoints={{
             1024: { slidesPerView: 5 }, 
             768: { slidesPerView: 4 }, 
-            480: { slidesPerView: 3 },
+            480: { slidesPerView: 4 }, 
+            320: { slidesPerView: 3 },
           }}
           modules={[Autoplay]} 
         >
@@ -59,14 +59,14 @@ export default function Partners() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ type: "spring", stiffness: 100, damping: 20 }}
-                className="px-2 flex justify-center"
+                className=" flex justify-center"
               >
                 <Image
                   src={logo}
                   alt={`Hamkor ${index + 1}`} 
                   width={128} 
                   height={96} 
-                  className="object-cover h-22 md:h-32 w-full rounded-2xl" 
+                  className="object-cover h-22 md:h-32 w-full rounded-lg sm:rounded-2xl" 
                 />
               </motion.div>
             </SwiperSlide>

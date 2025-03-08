@@ -34,7 +34,7 @@ export default function ServicesSection() {
   };
 
   return (
-    <section className="pb-16 bg-gradient-to-b text-white">
+    <section id="services" className="pb-16 pt-8 bg-gradient-to-b text-white">
       <div className="max-w-[1700px] mx-auto px-5">
         <motion.h2
           initial={{ opacity: 0, y: 50 }}

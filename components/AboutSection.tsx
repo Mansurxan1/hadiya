@@ -24,7 +24,7 @@ export default function AboutSection() {
   const scale = useTransform(scrollYProgress, [0, 0.5], [0.95, 1]);
 
   return (
-    <section ref={sectionRef} className="py-12 sm:py-16 relative overflow-hidden text-white">
+    <section id="about" ref={sectionRef} className="py-12 sm:py-16 relative overflow-hidden text-white">
       <div className="max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
           <motion.div
@@ -53,7 +53,7 @@ export default function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-white to-green-200 leading-tight tracking-tight"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl pb-4 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-white to-green-200 leading-tight tracking-tight"
               >
                 {t("aboutUs.title")}
               </motion.h2>
@@ -124,18 +124,10 @@ export default function AboutSection() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6"
             >
-              <Link href="/about">
-                <button className="relative bg-green-600 text-white font-semibold py-2 px-6 sm:py-3 sm:px-8 rounded-xl shadow-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-105 hover:shadow-xl group">
-                  <span className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-700 opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-xl"></span>
-                  <span className="relative z-10">{t("aboutUs.button")}</span>
-                </button>
-              </Link>
-              <Link href="/contact">
-                <button className="relative border-2 border-green-500 overflow-hidden text-white font-semibold py-2 px-6 sm:py-3 sm:px-8 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl group">
-                  <span className="absolute inset-0 bg-green-600 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-in-out"></span>
-                  <span className="relative z-10">{t("aboutUs.contact")}</span>
-                </button>
-              </Link>
+              <button id="contacts" className="relative border-2 border-green-500 overflow-hidden text-white font-semibold py-2 px-6 sm:py-3 sm:px-8 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl group">
+                <span className="absolute inset-0 bg-green-600 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-in-out"></span>
+                <span className="relative z-10">{t("aboutUs.contact")}</span>
+              </button>
             </motion.div>
 
             <motion.div
