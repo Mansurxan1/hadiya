@@ -2,7 +2,7 @@
 
 import type { NextPage } from "next";
 import { useState, useEffect } from "react";
-import axios, { AxiosError } from "axios"; // AxiosError import qilinadi
+import axios from "axios"; // `AxiosError` olib tashlandi
 import { useTranslation } from "react-i18next";
 import { FaSpinner } from "react-icons/fa";
 import Image from "next/image";
@@ -53,7 +53,7 @@ const Maps: NextPage = () => {
         parse_mode: "Markdown",
       });
       setErrorMessage("");
-    } catch (error: unknown) { 
+    } catch (error: unknown) {
       if (axios.isAxiosError(error)) {
         console.error("Telegramga yuborishda xato (Axios):", error);
         setErrorMessage(t("technicalError"));
