@@ -48,16 +48,16 @@ const Tour = () => {
         className=""
       >
         {tourList.map((tour) => (
-          <SwiperSlide key={tour.id} className="w-full max-w-[400px] mr-2.5 sm:mr-5">
+          <SwiperSlide key={tour.id} className="w-full max-w-[300px] sm:max-w-[400px] mr-2.5 sm:mr-5">
             <div className="relative bg-gray-800/50 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-100">
               <div className="relative group">
                 <Image
                   src={tour.image}
                   alt={t(`${translationKey}.${tour.id}.title`)}
-                  width={400}
-                  height={200}
+                  width={300}
+                  height={150}
                   priority
-                  className="w-full h-[200px] sm:h-[250px] object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-[150px] phone-max:h-[200px] sm:h-[250px] object-cover transition-transform duration-500 group-hover:scale-110"
                 />
 
                 <div className="absolute inset-0 duration-300" />
