@@ -1,14 +1,30 @@
 "use client";
 
-import { useTourStore } from "../zustand/tourStore";
+import { useTourStore } from "@z/tourStore";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { useRouter } from "next/navigation";
 
-const TourList = () => {
-  const { tours } = useTourStore();
+interface Tour {
+  id: string;
+  title: string;
+  description: string;
+  day: string;
+  price: number;
+  image: string;
+}
+
+const formatPrice = (price: number) => {
+  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+};
+
+const Tour = () => {
+  const router = useRouter();
+  const { tours, worldtour, medicaltour } = useTourStore();
   const { t } = useTranslation();
-  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -17,67 +33,71 @@ const TourList = () => {
 
   if (!isMounted) return null;
 
-  return (
-    <section id="tours" className="py-16">
-      <div className="max-w-[1700px] mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-12 bg-gradient-to-r from-green-300 to-green-500 bg-clip-text text-transparent">
-          {t("ourTours")}
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {tours.map((tour, index) => (
-            <div
-              key={index}
-              className="relative bg-[#2a3236] rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
-              onMouseEnter={() => setHoverIndex(index)}
-              onMouseLeave={() => setHoverIndex(null)}
-            >
+  const renderTourSection = (tourList: Tour[], sectionTitle: string, translationKey: string, type: string) => (
+    <section className="">
+      <h2 className="text-2xl md:text-3xl mt-5 font-extrabold text-center pb-7 bg-gradient-to-r from-green-300 to-green-500 bg-clip-text text-transparent">
+        {t(sectionTitle)}
+      </h2>
+      <Swiper
+        spaceBetween={10}
+        slidesPerView={1.5}
+        breakpoints={{
+          640: { slidesPerView: 2.5, spaceBetween: 15 },
+          1024: { slidesPerView: 3.5, spaceBetween: 20 },
+        }}
+        className=""
+      >
+        {tourList.map((tour) => (
+          <SwiperSlide key={tour.id} className="w-full max-w-[400px] mr-2.5 sm:mr-5">
+            <div className="relative bg-gray-800/50 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-100">
               <div className="relative group">
                 <Image
                   src={tour.image}
-                  alt={t(`tours.${tour.id}.title`)}
+                  alt={t(`${translationKey}.${tour.id}.title`)}
                   width={400}
-                  height={250}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                  height={200}
+                  priority
+                  className="w-full h-[200px] sm:h-[250px] object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute top-4 right-4 text-white bg-green-500 text-sm font-semibold py-1 px-2 rounded-full">
-                    {tour.price.toLocaleString()} {t("uzs")}
-                    </div>
+
+                <div className="absolute inset-0 duration-300" />
+                <div className="absolute top-2 sm:top-4 right-2 sm:right-4 text-white bg-green-500 text-xs sm:text-sm font-semibold py-1 px-1 sm:px-2 rounded-full transition-all duration-300 group-hover:bg-teal-600">
+                  {formatPrice(tour.price)} {t("uzs")}
                 </div>
-              <div className="p-3">
-                <h3 className="text-lg font-bold min-h-[56px] bg-gradient-to-r from-green-300 to-green-500 bg-clip-text text-transparent mb-2 line-clamp-2">
-                {t(`tours.${tour.id}.title`)}
+              </div>
+              <div className="p-2 sm:p-3 transition-colors duration-300 group-hover:text-white">
+                <h3 className="text-sm sm:text-lg font-bold min-h-[40px] sm:min-h-[56px] bg-gradient-to-r from-green-300 to-green-500 bg-clip-text text-transparent mb-1 sm:mb-2 line-clamp-2 transition-all duration-300 group-hover:text-white">
+                  {t(`${translationKey}.${tour.id}.title`) || "No Title"}
                 </h3>
-                <p className="text-gray-300 text-sm pt-2 mb-4 line-clamp-2">
-                  <span className="text-white font-bold mr-1">{t(`tours.${tour.id}.day`)}</span> 
-                  {t(`tours.${tour.id}.description`)}
+                <p className="text-xs sm:text-sm text-gray-300 pt-1 sm:pt-2 mb-2 sm:mb-4 line-clamp-2 transition-colors duration-300 group-hover:text-gray-100">
+                  <span className="text-white font-bold mr-0.5 sm:mr-1 transition-colors duration-300 group-hover:text-gray-200">
+                    {t(`${translationKey}.${tour.id}.day`) || "N/A"}
+                  </span>
+                  {t(`${translationKey}.${tour.id}.description`) || "No description"}
                 </p>
-                <button className="w-full bg-green-500 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:from-teal-600 hover:to-blue-700 hover:scale-105">
+                <button
+                  onClick={() => router.push(`/tour/${type}/${tour.id}`)}
+                  className="w-full bg-green-500 text-white px-2 sm:px-4 py-1 sm:py-2 rounded-lg text-xs sm:text-base font-medium transition-all duration-300 hover:bg-gradient-to-r hover:from-teal-600 hover:to-blue-700 hover:scale-105"
+                >
                   {t("inDetail")}
                 </button>
               </div>
-              {hoverIndex === index && (
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-teal-400 to-blue-500 animate-slide" />
-              )}
             </div>
-          ))}
-        </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </section>
+  );
+
+  return (
+    <section id="tours" className="py-5">
+      <div className="p-2 sm:p-3">
+        {renderTourSection(tours, "ourTours", "tours", "internal")}
+        {renderTourSection(worldtour, "worldTours", "worldtour", "world")}
+        {renderTourSection(medicaltour, "medicalTours", "medicaltour", "medical")}
       </div>
-      <style jsx>{`
-        @keyframes slide {
-          0% {
-            transform: translateX(-100%);
-          }
-          100% {
-            transform: translateX(100%);
-          }
-        }
-        .animate-slide {
-          animation: slide 1.5s infinite;
-        }
-      `}</style>
     </section>
   );
 };
 
-export default TourList;
+export default Tour;

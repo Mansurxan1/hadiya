@@ -6,12 +6,13 @@ import { useTranslation } from "react-i18next";
 import { ChevronDown, Phone, Menu, X } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false); 
+  const [isScrolled, setIsScrolled] = useState(false); 
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false); 
   const pathname = usePathname();
 
   useEffect(() => {
@@ -45,7 +46,7 @@ export default function Navbar() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const offset = 150;
+      const offset = 120;
       const elementPosition = element.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({
         top: elementPosition - offset,
@@ -62,6 +63,27 @@ export default function Navbar() {
     { id: "contact", label: t("contact"), path: "/contact" },
   ];
 
+  const modalVariants = {
+    hidden: { y: "-100%", opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.7, ease: "easeInOut" } },
+    exit: { y: "100%", opacity: 0, transition: { duration: 0.7, ease: "easeInOut" } },
+  };
+
+  const backdropVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.5 } },
+    exit: { opacity: 0, transition: { duration: 0.5 } },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: (index: number) => ({
+      y: 0,
+      opacity: 1,
+      transition: { delay: index * 0.1, duration: 0.5, ease: "easeOut" },
+    }),
+  };
+
   return (
     <nav
       className={`${
@@ -77,7 +99,8 @@ export default function Navbar() {
                 alt="Hadiya Travel Logotip"
                 width={60}
                 height={60}
-                className="h-12 sm:h-[70px] w-auto transition-transform duration-300 group-hover:scale-105 rounded-full shadow-lg shadow-green-500/20"
+                priority
+                className="h-10 phone-max:h-[70px] w-auto transition-transform duration-300 group-hover:scale-105 rounded-full shadow-lg shadow-green-500/20"
               />
               <div className="absolute -inset-1 bg-gradient-to-r from-green-400 to-[#333b3f] rounded-full blur opacity-20 group-hover:opacity-40 transition-all duration-300"></div>
             </div>
@@ -104,10 +127,10 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center gap-1">
           <a
             href="tel:+998970383833"
-            className="flex items-center p-2 text-[10px] sm:text-lg bg-[#333b3f] text-white rounded-full border border-green-500 shadow-2xl hover:bg-green-500 transition-all duration-300"
+            className="flex items-center p-2 text-xs sm:text-lg bg-[#333b3f] text-white rounded-full border border-green-500 shadow-2xl hover:bg-green-500 transition-all"
           >
             <Phone size={18} className="mr-2 text-green-400 animate-pulse" />
             +998 97 038-38-33
@@ -116,29 +139,29 @@ export default function Navbar() {
           <div className="relative">
             <button
               onClick={() => setDropdownOpen(!dropdownOpen)}
-              className="bg-[#333b3f] cursor-pointer p-1 text-[10px] sm:text-lg text-white px-4 py-2 rounded-full flex items-center border border-green-500 shadow-2xl hover:bg-green-500 transition-all duration-300"
+              className="bg-[#333b3f] cursor-pointer text-[11px] sm:text-lg text-white px-4 py-2 rounded-full flex items-center border border-green-500 shadow-2xl hover:bg-green-500 transition-all duration-300"
             >
               {i18n.language.toUpperCase()}
-              <ChevronDown size={16} className="ml-2" />
+              <ChevronDown size={16} className="ml-1" />
             </button>
 
             {dropdownOpen && (
-              <div className="absolute right-0 mt-2 w-32 bg-[#333b3f] text-white rounded-md shadow-lg overflow-hidden animate-fadeIn">
+              <div className="absolute right-0 mt-2 w-24 bg-[#333b3f] text-white rounded-md shadow-lg overflow-hidden">
                 <button
                   onClick={() => changeLanguage("uz")}
-                  className="block w-full cursor-pointer px-4 py-2 text-left hover:bg-green-500/20 transition-all duration-200"
+                  className="block w-full cursor-pointer px-2 py-1 text-left hover:bg-green-500/20"
                 >
-                  O&apos;zbek
+                  O'zbek
                 </button>
                 <button
                   onClick={() => changeLanguage("ru")}
-                  className="block w-full px-4 cursor-pointer py-2 text-left hover:bg-green-500/20 transition-all duration-200"
+                  className="block w-full cursor-pointer px-2 py-1 text-left hover:bg-green-500/20"
                 >
                   Русский
                 </button>
                 <button
                   onClick={() => changeLanguage("en")}
-                  className="block w-full px-4 cursor-pointer py-2 text-left hover:bg-green-500/20 transition-all duration-200"
+                  className="block w-full cursor-pointer px-2 py-1 text-left hover:bg-green-500/20"
                 >
                   English
                 </button>
@@ -172,36 +195,56 @@ export default function Navbar() {
         </div>
       </div>
 
-      {mobileMenuOpen && (
-        <div
-          className={`lg:hidden fixed inset-0 z-40 flex items-center justify-center ${
-            mobileMenuOpen ? "animate-slideDown" : "animate-slideUp"
-          }`}
-        >
-          <div
-            className="absolute inset-0 bg-gradient-to-b from-[#333b3f]/95 to-black/80 backdrop-blur-lg"
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            className="lg:hidden fixed inset-0 z-40 flex items-center justify-center"
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={backdropVariants}
             onClick={() => setMobileMenuOpen(false)}
-          ></div>
+          >
+            <motion.div
+              className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+              variants={backdropVariants}
+            />
 
-          <div className="relative w-full max-w-md mx-4 p-6 bg-[#333b3f]/90 rounded-2xl shadow-2xl shadow-green-500/20 border border-green-500/30 transform transition-all duration-500 hover:scale-105">
-            <div className="space-y-4">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`block w-full text-left px-6 py-4 text-lg font-semibold rounded-xl transition-all duration-300 ${
-                    pathname === item.path
-                      ? "bg-green-500 text-white shadow-lg"
-                      : "text-white hover:bg-green-500/20 hover:text-green-300 hover:shadow-md"
-                  } bg-gradient-to-r from-[#333b3f] to-[#444b4f] border border-green-500/20`}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
+            <motion.div
+              className="relative w-11/12 max-w-md bg-[#333b3f]/95 rounded-2xl shadow-2xl shadow-green-500/30 border border-green-500/40"
+              variants={modalVariants}
+              onClick={(e) => e.stopPropagation()} 
+            >
+              <div className="p-6 space-y-6">
+                {navItems.map((item, index) => (
+                  <motion.button
+                    key={item.id}
+                    custom={index}
+                    initial="hidden"
+                    animate="visible"
+                    variants={itemVariants}
+                    onClick={() => scrollToSection(item.id)}
+                    className={`block w-full text-left px-6 py-4 text-xl font-semibold rounded-xl transition-all duration-300 ${
+                      pathname === item.path
+                        ? "bg-green-500 text-white shadow-lg"
+                        : "text-white hover:bg-green-500/30 hover:text-green-300 hover:shadow-md"
+                    } bg-gradient-to-r from-[#333b3f] to-[#444b4f] border border-green-500/20 transform hover:scale-105`}
+                  >
+                    {item.label}
+                  </motion.button>
+                ))}
+              </div>
+
+              <button
+                className="absolute top-4 right-4 text-white w-10 h-10 flex items-center justify-center rounded-full bg-[#333b3f] border border-green-500 shadow-lg hover:bg-green-500/30 transition-all duration-300"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <X size={28} />
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }

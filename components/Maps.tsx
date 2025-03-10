@@ -2,7 +2,7 @@
 
 import type { NextPage } from "next";
 import { useState, useEffect } from "react";
-import axios from "axios"; // `AxiosError` olib tashlandi
+import axios from "axios"; 
 import { useTranslation } from "react-i18next";
 import { FaSpinner } from "react-icons/fa";
 import Image from "next/image";

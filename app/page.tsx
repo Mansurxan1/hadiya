@@ -17,12 +17,12 @@ const Page = () => {
 
   return (
     <main
-      className="min-h-screen w-full bg-cover bg-center bg-no-repeat bg-fixed"
+      className="relative min-h-screen w-full bg-cover bg-center bg-no-repeat bg-fixed"
       style={{
         backgroundImage: "url('/bg.jpg')",
       }}
     >
-      <div className="min-h-screen w-full bg-black/60">
+      <div className="relative min-h-screen w-full bg-black/40">
         <Banner />
         <AboutSection />
         <Tour />

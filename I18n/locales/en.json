@@ -97,25 +97,90 @@
   "review_8": "My trip gave me a new life!",
   "review_9": "They provided the best experience!",
   "review_10": "I had an unforgettable rest!",
-  "ourTours": "Domestic tourism",
-  "inDetail": "More details",
-  "loading": "Loading",
+  "ourTours": "Domestic Tourism",
+  "worldTours": "World Tours",
+  "medicalTours": "Medical Tours",
   "uzs": "UZS",
+  "inDetail": "In Detail",
+  "day": "Travel days:",
+  "price": "Travel price:",
+  "description": "Travel destination information:",
+  "separately": "Additional expenses:",
+  "visa": "Visa requirements:",
+  "hotel": "Hotels:",
+  "tour_services": "Included in the price:",
+  "information": "What awaits you on the trip:",
+  "buy": "Buy",
+  "buyNow": "Proceed to payment",
+  "back": "Back",
+  "orderDetails": "Enter your details",
+  "travel": "Travel destination:",
   "tours": {
     "xiva": {
-      "title": "Khorezm Historical Tour (Departure from Tashkent)",
-      "day": "5-day trip",
-      "description": "Ichan Kala, Pahlavon Mahmud Mausoleum, Khoja Islam Mausoleum, Sayid Alouddin Mausoleum, Kalta Minor, Juma Mosque, Tosh-Hovli Palace, Kohna Ark, Khoja Kalon Mausoleum, Khoja Tolib Mausoleum, Muhammad Amin Khan Madrasa"
+      "title": "Historical Khorezm Tour (from Tashkent)",
+      "day": "5-day tour",
+      "services": "Comfortable transport, visits to shrines across Khorezm, two nights in a hotel, breakfast, guide services, professional photoshoot, security",
+      "separately": "Meals, personal expenses",
+      "information": "Khorezm is one of the oldest and historically rich regions of Uzbekistan, renowned for its cultural heritage, ancient cities, and beautiful nature. Located in the northwest of Uzbekistan, it lies along the Amu Darya River and is one of the ancient oases.",
+      "description": "Ichan Qala, Pahlavon Mahmud Mausoleum, Khoja Islam Mausoleum, Sayid Alauddin Mausoleum, Kalta Minor, Juma Mosque, Tosh-Hovli Palace, Kuhna Ark, Khoja Kalon Mausoleum, Khoja Tolib Mausoleum, Muhammad Amin Khan Madrasah"
     },
     "samarkand": {
-      "title": "Samarkand Historical Tour (Departure from Tashkent)",
-      "day": "1-day trip",
-      "description": "Registan Square, Imam Al-Bukhari Mausoleum, I. Karimov Mausoleum, Siyob Bazaar, and more."
+      "title": "Historical Samarkand Tour (from Tashkent)",
+      "day": "1-day tour",
+      "services": "Comfortable transport, visits to shrines across Samarkand, guide services, professional photoshoot, security",
+      "separately": "Meals, personal expenses",
+      "information": "Samarkand is one of the oldest and most famous cities in Uzbekistan, known as the Pearl of the East. It was a key center of the Great Silk Road, distinguished by its rich history, unique architecture, and cultural heritage.",
+      "description": "Registan Square, Imam Al-Bukhari Shrine, I. Karimov Shrine, Mahdumi Azam Shrine, Siyob Bazaar, Mirzo Ulugbek Observatory, Gur-e-Amir, Bibi-Khanym, Shah-i-Zinda, and other pilgrimage sites!"
     },
     "bukhara": {
-      "title": "Bukhara Sacred Landmarks (Departure from Tashkent)",
-      "day": "3-day trip",
-      "description": "Yetti Pir Mausoleum, Bukhara Ark, Labi Hauz, Chashma Ayub Mausoleum."
+      "title": "Sacred Monuments of Bukhara (from Tashkent)",
+      "day": "3-day tour",
+      "services": "Comfortable transport, visits to shrines across Bukhara, two nights in a hotel, breakfast, guide services, professional photoshoot, security",
+      "separately": "Meals, personal expenses",
+      "information": "Bukhara is one of the oldest cities in Uzbekistan, with a history spanning over 2,500 years. It was a significant center of the Great Silk Road and made substantial contributions to science, culture, and the development of Islam.",
+      "description": "Seven Pirs Shrine, Bukhara Ark, Lyabi Hauz, Bahauddin Naqshbandi Complex, Chashma Ayub Mausoleum, Magoki Attori Mosque, Sayfiddin Bokharzi Mausoleum, Mir Arab Madrasah, Khoja Zayniddin Complex, and other historical sites!"
     }
-  }
+  },
+  "worldtour": {
+    "saudiya": {
+      "title": "Saudi Arabia, Excursion to Mecca and Medina",
+      "day": "14-day",
+      "services": "Flight ticket, transport across all routes, tourist visa, two meals a day in Medina, three meals a day in Mecca",
+      "separately": "Personal expenses",
+      "hotel": "Regency Hotel",
+      "hotelstar": "2",
+      "information": "Mecca and Medina, the holiest cities of Saudi Arabia, welcome millions of Muslim pilgrims annually. These cities are of great importance to Islam and are visited by Muslims to perform Hajj and Umrah.",
+      "description": "General excursion in Medina, general excursion in Mecca",
+      "visa": "Tourist visa required, international passport"
+    },
+    "vietnam": {
+      "title": "Vietnam - Phu Quoc, crystal-clear waters, white sandy beaches, and tropical nature",
+      "day": "7 days.",
+      "services": "Flight ticket, hotel accommodation, meals according to the chosen concept, airport transfers, medical insurance",
+      "separately": "Personal expenses",
+      "hotel": "Phu Quoc Hotel Sun and Sea",
+      "hotelstar": "3",
+      "information": "Vietnam’s largest island, located in the Gulf of Thailand, is famous for its natural beauty, tourist attractions, and relaxation spots.",
+      "description": "Relaxation on Phu Quoc Island, beaches, and exploring local cuisine.",
+      "visa": "Tourist visa required, international passport"
+    },
+    "sharm": {
+      "title": "Sharm El Sheikh in Ramadan – great relaxation and big discounts!",
+      "day": "7 days.",
+      "services": "Flight ticket, hotel accommodation, meals according to the chosen concept, airport transfers, medical insurance",
+      "separately": "Personal expenses",
+      "hotel": "Taj Park",
+      "hotelstar": "5",
+      "description": "Diving and snorkeling in the Red Sea, quad bike and ATV safaris, stargazing in the mountains overnight",
+      "information": "Relax in peace, comfort, and care during the blessed month!",
+      "visa": "No visa required. International passport"
+    }
+  },
+  "address": "Tashkent city, Shaykhantakhur district, Samarkand Darvoza, house 6",
+  "footerInfo": "HADIYA UNIVERSAL GROUPE – a company offering a wide range of services in the tourism industry.",
+  "info": "Information",
+  "privacy": "Privacy",
+  "emailUs": "Email us",
+  "followUs": "Follow us",
+  "allRightsReserved": "All rights reserved"
 }

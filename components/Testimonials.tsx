@@ -58,7 +58,7 @@ const Testimonials: React.FC = () => {
                 <p className="text-xs text-gray-400">{t(testimonial.role)}</p>
               </div>
               <p className="text-gray-200 text-sm md:text-base italic">
-                {t(testimonial.review).replace(/"/g, "&quot;")} {/* Qo‘shtirnoqlarni qochirish */}
+                {t(testimonial.review).replace(/"/g, "&quot;")} 
               </p>
             </div>
           ))}

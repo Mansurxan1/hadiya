@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import "./globals.css";
 import "../I18n/i18n"; 
 import Navbar from "../components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const { i18n } = useTranslation();
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

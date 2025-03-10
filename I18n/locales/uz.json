@@ -99,25 +99,146 @@
   "review_9": "Eng yaxshi tajribani taqdim etdi!",
   "review_10": "Unutilmas dam oldim!",
   "ourTours": "Ichki turizm",
-  "inDetail": "Batafsil",
-  "loading": "Yuborilmoqda",
+  "worldTours": "Jahon Sayohatlari",
+  "medicalTours": "Tibbiy Sayohatlar",
   "uzs": "so'm",
+  "inDetail": "Batafsil",
+  "day": "Sayohat kunlari:",
+  "price": "Sayohat narxi:",
+  "description": "Sayohat manzil ma'lumoti:",
+  "separately": "Qo'shimcha xarajatlar:",
+  "visa": "Viza olish:",
+  "hotel": "Mehmonxonalar:",
+  "tour_services": "Narx ichiga kiradi:",
+  "information": "Sayohatda sizni nimalar kutmoqda:",
+  "buy": "Sotib olish",
+  "buyNow": "To'lovga o'tish",
+  "back": "Ortga",
+  "orderDetails": "Ma'lumotlaringizni kiriting",
+  "travel": "Sayohat manzili:",
   "tours": {
     "xiva": {
       "title": "XORAZM Tarixiy Sayohati (Toshkentdan borish)",
       "day": "5 kunlik sayohatda",
+      "services": "Qulay transport, Xorazm bo’ylab ziyoratlar, Ikki kecha mehmonxonada tunash, Ertalabki nonushta, Gid xizmati, Professional fotosessiya, Xavfsizlik",
+      "separately": "Ovqatlanish, shaxsiy xarajatlar",
+      "information": "Xorazm – O‘zbekistonning eng qadimiy va boy tarixga ega hududlaridan biri bo‘lib, u madaniy meros, qadimiy shaharlar va go‘zal tabiati bilan mashhur. Ushbu viloyat O‘zbekistonning shimoli-g‘arbiy qismida joylashgan bo‘lib, Amudaryo bo‘yi bo‘ylab joylashgan qadimiy vohalardan biridir.",
       "description": "Ichan Qalʼa, Pahlavon Mahmud maqbarasi, Xo’ja Islom maqbarasi, Sayid Alouddin maqbarasi, Kalta Minor, Juma masjidi, Tosh-Hovli saroyi, Ko’hna Ark, Xo’ja Kalon maqbarasi, Xo’ja Tolib maqbarasi, Muhammad Aminxon madrasasi"
     },
     "samarkand": {
       "title": "Samarqand Tarixiy Sayohati (Toshkentdan borish)",
       "day": "1 kunlik sayohatda",
-      "description": "Registon maydoni, Imom Al-Buhoriy ziyoratgohi, I.Karimov ziyoratgohi, Siyob bozori va boshqalar."
+      "services": "Qulay transport, Samarqand bo’ylab ziyoratlar, Gid xizmati, Professional Fotosessiya, Xavfsizlik",
+      "separately": "Ovqatlanish, shaxsiy xarajatlar",
+      "information": "Samarqand – O‘zbekistonning eng qadimiy va mashhur shaharlaridan biri bo‘lib, Sharq gavhari deb ataladi. U Buyuk Ipak yo‘lining muhim markazi bo‘lib, boy tarixi, betakror arxitekturasi va madaniy merosi bilan ajralib turadi.",
+      "description": "Registon maydoni, Imom Al-Buhoriy ziyoratgohi, I.Karimov ziyoratgohi, Mahdumi A’zam ziyoratgohi, Siyob bozori, Mirzo Ulug’bek rasadxonasi, Go’ri Amir, Bibixonim, Shohi zinda va boshqa ziyorat manzillari!"
     },
     "bukhara": {
       "title": "Buxoro Muqaddas Yodgorliklari (Toshkentdan borish)",
       "day": "3 kunlik sayohatda",
-      "description": "Yetti Pir ziyoratgohi, Buxoro Arki, Labi Hovuz, Chashmai Ayub maqbarasi."
+      "services": "Qulay transport, Buxoro bo'ylab ziyoratlar, Ikki kecha mehmonxonada tunash, Ertalabki nonushta, Gid xizmati, Professional Fotosessiya, Xavfsizlik",
+      "separately": "Ovqatlanish, shaxsiy xarajatlar",
+      "information": "Buxoro – O‘zbekistonning eng qadimiy shaharlaridan biri bo‘lib, 2500 yildan ortiq tarixga ega. U Buyuk Ipak yo‘lining muhim markazlaridan biri bo‘lib, ilm-fan, madaniyat va islom dini rivojiga katta hissa qo‘shgan.",
+      "description": "Yetti Pir ziyoratgohi, Buxoro Arki, Labi Hovuz, Bohouddin Naqshbandiy majmuasi, Chashmai Ayub maqbarasi, Mag’ori Attor masjidi, Sayfiddin Boharziy maqbarasi, Mir Arab madrasasi, Xo’ja Zayniddin majmuasi va boshqa shu kabi tarixiy manzillar!"
     }
-  }
-
+  },
+  "worldtour": {
+    "saudiya": {
+      "title": "Saudiya Arabistoni, Makka va Madinada ekskursiya",
+      "day": "14 kunlik",
+      "services": "Aviachipta, Barcha yo'nalish bo'yicha transport, Turistik viza, Madinada ikki mahal ovqatlanish, Makkada uch mahal ovqatlanish",
+      "separately": "Shaxsiy xarajatlar",
+      "hotel": "Regency Hotel",
+      "hotelstar": "2",
+      "information": "Saudiya Arabistonining eng muqaddas shaharlaridan bo‘lmish Makka va Madina har yili millionlab musulmon ziyoratchilarni qabul qiladi. Bu shaharlar Islom dini uchun muhim bo‘lib, Haj va Umra ibodatlarini ado etish uchun musulmonlar tomonidan ziyorat qilinadi. Makka Islom dinining eng muqaddas shahri bo‘lib, Payg‘ambar Muhammad (s.a.v.) shu yerda tug‘ilgan va Islomning ilk yillari shu shaharda o‘tgan. Madina Payg‘ambar Muhammad (s.a.v.) hijrat qilgan va Islom davlatining ilk poytaxti bo‘lgan shahar hisoblanadi.",
+      "description": "Madina shahrida umumiy ekskursiya, Makka shahrida umumiy ekskursiya",
+      "visa": "Turistik viza talab qilinadi, zagran pasport"
+    },
+    "vietnam": {
+      "title": "Vietnam - Fukuok, kristalldek tiniq suv, oq qumli plyajlar, va tropik tabiat",
+      "day": "7 kun.",
+      "services": "Aviachipta, Mehmonxonaga joylashtirish, Tanlangan kontseptsiyaga muvofiq ovqatlanish, Aeroportdan va aeroportga transfer xizmati, Tibbiy sug'urta, Narx bir kishi uchun ikki kishilik yashashga asoslangan",
+      "separately": "Shaxsiy xarajatlar",
+      "hotel": "Phu Quoc Hotel Sun va Sea",
+      "hotelstar": "3",
+      "information": " Vyetnamning eng yirik oroli bo‘lib, u Tailand ko‘rfazida joylashgan va tabiiy go‘zalligi, sayohat joylari va dam olish maskanlari bilan mashhur. Bu joy turistlar uchun osoyishta plyajlari, shaffof suvlari va dengiz mahsulotlari bilan tanilgan.",
+      "description": "Fukuok orolida dam olish, plyajlar va mahalliy taomlar bilan tanishish.",
+      "visa": "Turistik viza talab qilinadi, zagran pasport"
+    },
+    "sharm": {
+      "title": "Sharm al-Shayxda Ramazon – ajoyib dam olish va katta chegirmalar!",
+      "day": "7 kun.",
+      "services": "Aviachipta, Mehmonxonaga joylashtirish, Tanlangan kontseptsiyaga muvofiq ovqatlanish, Aeroportdan va aeroportga transfer xizmati, Tibbiy sug'urta",
+      "separately": "Shaxsiy xarajatlar",
+      "hotel": "Taj Park",
+      "hotelstar": "5",
+      "description": "Qizil dengizdagi sho‘ng‘ish va snorkeling, Quad bike va ATV safari, Tog‘larda tun bo‘yi yulduz kuzatish, Ras Mohammed milliy bog‘i, Muso tog‘i va Avliyo Ketrin monastir, Mahalliy taomlar",
+      "information": "Muborak oyda xotirjamlik, qulaylik va g‘amxo‘rlik muhitida dam oling! Sharm al-Shayx mehmonxonalari ro‘za tutuvchi mehmonlarga alohida e’tibor qaratadi: faqat ro‘za tutishingizni bildiring va siz uchun Ramazon an’analariga mos ravishda saharlik hamda iftorlik tashkil etiladi",
+      "visa": "Viza talab etilmaydi. Zagran pasport"
+    },
+    "doha": {
+      "title": "Doha – Turistlar Uchun Mukammal Shahar",
+      "day": "7 kunlik",
+      "services": "Aviachipta, Mehmonxonaga joylashtirish, Barcha yo'nalish bo'yicha transport, Turistik viza, Gid xizmati",
+      "separately": "Shaxsiy xarajatlar",
+      "hotel": "Kingsgate Hotel",
+      "hotelstar": "3",
+      "description": "Islom San’ati Muzeyi, Boy madaniyat va tarix,  Dengiz bo‘yi dam olish maskanlari, Dunyoning eng hashamatli mehmonxonalari",
+      "information": "Doha – Qatar poytaxti va eng yirik shahri bo‘lib, Fors ko‘rfazi bo‘yida joylashgan. Zamonaviy infratuzilma, tarixiy yodgorliklar va hashamatli turistik xizmatlar bilan sayohatchilarni o‘ziga jalb qiladi.",
+      "visa": "Turistik viza talab qilinadi, zagran pasport"
+    },
+    "dubai": {
+      "title": "Dubay – Turizm Jannati ",
+      "day": "7 kun.",
+      "services": "Aviachipta, Mehmonxonaga joylashtirish, Aeroportdan va aeroportga transfer xizmati, Tibbiy sug'urta, Gid xizmati",
+      "separately": "Shaxsiy xarajatlar, Ovqatlanish",
+      "hotel": "Al Khaleej Grand Hotel",
+      "hotelstar": "3",
+      "description": "Burj Khalifa, Mashhur savdo markazlari – The Dubai Mall va Mall of the Emirates, Sun’iy orollar – Palm Jumeirah va The World Islands, Ain Dubai – Dunyoning eng katta Ferris g‘ildiragi.",
+      "information": "Dubay – Birlashgan Arab Amirliklarining eng mashhur shahri bo‘lib, hashamat, zamonaviylik va an’anaviy arab madaniyatining mukammal uyg‘unligiga ega. Bu shahar yilning har qanday faslida sayyohlar uchun ajoyib tajribalarni taklif qiladi.",
+      "visa": "Turistik viza talab qilinmaydi, zagran pasport"
+    },
+    "abudhabi": {
+      "title": "Abu Dabi – BAAning Yuragi",
+      "day": "7 kun.",
+      "services": "Aviachipta, Mehmonxonaga joylashtirish, Barcha yo'nalish bo'yicha transport, Aeroportdan va aeroportga transfer xizmati, Gid xizmati, Tibbiy sug'urta",
+      "separately": "Shaxsiy xarajatlar",
+      "hotel": "Al Khaleej Grand Hotel",
+      "hotelstar": "3",
+      "description": "Hashamatli diqqatga sazovor joylar va ajoyib me'morchilik, Dunyoning eng yirik masjidlaridan biri – Shayx Zayd masjidi, Ferrari World va Yas Island kabi qiziqarli dam olish maskanlari, Cho‘l safari va Fors ko‘rfazi bo‘ylab ajoyib sayohatlar, Boy madaniyat va san’at – Luvr Abu Dhabi va Qasr Al Vatan",
+      "information": "Abu Dabi – Birlashgan Arab Amirliklarining poytaxti va eng yirik shahri bo‘lib, boy tarix, hashamatli hayot tarzi va zamonaviy arxitektura bilan mashhur. U Dubayga nisbatan tinchroq va madaniy merosga boy shahardir.",
+      "visa": "Viza talab etilmaydi. Zagran pasport"
+    }
+  },
+  "medicaltour": {
+    "naftalan": {
+      "title": "Naftalan — sog‘lig‘ingiz uchun eng yaxshi tanlov! + Boku",
+      "day": "7 kecha Naftalan + 3 kecha Boku",
+      "services": "Toshkent – Boku – Toshkent aviachipta, Aeroportdan mehmonxonaga transfer, Bokuda nonushta, Naftalanda 3 mahal ovqatlanish, Mehmonxonada yashash, Tibbiy sug‘urta, Asosiy davolash paketi",
+      "separately": "Shaxsiy xarajatlar",
+      "hotel": "Nur Naftalan va Boku",
+      "hotelstar": "5",
+      "description": "Teri kasalliklari, Revmatologik kasalliklar, Nevrologik muammolar, Ginekologik kasalliklar, Tromboflebit va qon aylanish muammolari, Mineral vannalar va loy bilan muolaja, Massaj va akupunktura, Turli fizioterapiya usullari",
+      "information": "Naftalan – bu dunyo darajasidagi shifokorlar, zamonaviy tibbiy uskunalar va eng asosiysi, naftalanoterapiya orqali davolanish imkoniyatidir. Naftalan kurortining asosiy yo‘nalishlari teri kasalliklari va tayanch-harakat tizimi bilan bog‘liq muammolarni davolashdir.",
+      "visa": "Turistik viza talab qilinadi. Zagran pasport"
+    },
+    "medical": {
+      "title": "Borjomiga tibbiy sayohatlar va tibbiy ekskursiya",
+      "day": "7 kun.",
+      "services": "Toshkent-Tbilisi-Toshkent aviachipta, Barcha yo'nalish bo'yicha transport, Kuniga 3 mahal ovqat + davolash (shifokor ko'rsatmasi bo'yicha), Turar joy",
+      "separately": "Shaxsiy xarajatlar",
+      "hotel": "Borjomi Likani",
+      "hotelstar": "5",
+      "description": "Gastrit va oshqozon-ichak tizimi muammolari, Jigar va o't yo‘llari kasalliklari, Buyrak va siydik tizimi kasalliklari, Metabolik sindrom (semizlik, diabet), Yurak-qon tomir kasalliklari, Nerv tizimi va stress bilan bog‘liq muammolar",
+      "information": "Tibbiy ekskursiya ota-onalar uchun ajoyib sovg'adir, chunki bu ularga nafaqat dam olish, balki sog'lig'ini tiklash, sifatli davolanish va parvarish qilish, esda qolarli tajribalar yaratish imkonini beradi.",
+      "visa": "Zagran pasport. Viza olish talab etilmaydi"
+    }
+  },
+  "address": "Toshkent shahri, Shayxontohur tumani, Samarqand darvoza 6-uy",
+  "footerInfo": "HADIYA UNIVERSAL GROUPE – turizm sohasida keng xizmatlar ko‘rsatuvchi kompaniya. O‘zbekiston va xorijiy sayohatlar, tibbiy turizm, viza rasmiylashtirish hamda aviachipta xizmatlarini taklif etamiz.",
+  "info": "Ma'lumot",
+  "privacy": "Maxfiylik",
+  "emailUs": "Bizga yozing", 
+  "followUs": "Bizga a'zo bo'ling",
+  "allRightsReserved": "Barcha huquqlar himoyalangan"
 }

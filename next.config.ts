@@ -1,31 +1,28 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  reactStrictMode: true,
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "static-maps.yandex.ru",
-        port: "",
-        pathname: "/1.x/**",
-      },
-      {
-        protocol: "https",
-        hostname: "waterparktenerife.com",
-        port: "",
-        pathname: "/wp-content/uploads/**",
-      },
-      {
-        protocol: "https",
-        hostname: "neuro.uz",
-        port: "",
-        pathname: "/storage/uploads/post/large/**",
-      },
+    domains: [
+      "aniq.uz",
+      "pohcdn.com",
+      "m.ahstatic.com",
+      "toping.uz",
+      "travelsystem.uz",
+      "www.borjomilikaniresort.com",
+      "cdn.worldota.net",
+      "res.cloudinary.com",
+      "economymiddleeast.com",
+      "static-maps.yandex.ru",
+      "waterparktenerife.com",
+      "neuro.uz",
     ],
   },
-  reactStrictMode: true,
 };
 
-module.exports = nextConfig;
+export default nextConfig;
+
+
 
   // eslint: {
   //   ignoreDuringBuilds: true,
