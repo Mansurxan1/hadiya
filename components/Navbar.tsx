@@ -151,7 +151,7 @@ export default function Navbar() {
                   onClick={() => changeLanguage("uz")}
                   className="block w-full cursor-pointer px-2 py-1 text-left hover:bg-green-500/20"
                 >
-                  O'zbek
+                  O&apos;zbek
                 </button>
                 <button
                   onClick={() => changeLanguage("ru")}
