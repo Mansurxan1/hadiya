@@ -76,7 +76,7 @@ const Footer = () => {
   ];
 
   const otherPages = [
-    { id: "refund-policy", label: t("refundPolicy"), href: "/refund-policy" },
+    { id: "refund-policy", label: t("contract"), href: "" },
     { id: "faq", label: t("faq"), href: "/faq" },
   ];
 

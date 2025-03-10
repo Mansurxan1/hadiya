@@ -8,6 +8,7 @@ import ServicesSection from "@/components/ServicesSection";
 import Tour from "@/components/Tour";
 import React, { useEffect } from "react";
 import Testimonials from "@/components/Testimonials";
+import Visa from "@/components/Visa";
 
 const Page = () => {
 
@@ -27,6 +28,7 @@ const Page = () => {
         <AboutSection />
         <Tour />
         <ServicesSection />
+        <Visa />
         <Partners />
         <Testimonials />
         <Maps />
