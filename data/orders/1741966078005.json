@@ -1,0 +1,13 @@
+{
+  "orderId": "1741966078005",
+  "tourId": "test-124",
+  "tourName": "Тестовый тур в Бухару",
+  "price": "1700000",
+  "userId": "test-user2",
+  "userName": "Тестовый Клиент",
+  "userPhone": "+998909876543",
+  "status": "PAID",
+  "createdAt": "2025-03-14T15:27:58.005Z",
+  "clickTransId": "123456789",
+  "paidAt": "2025-03-14T15:32:02.864Z"
+}

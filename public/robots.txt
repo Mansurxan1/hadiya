@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hadiya-travel.uz/sitemap.xml

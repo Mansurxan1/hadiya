@@ -1,0 +1,15 @@
+{
+  "orderId": "1741966660219",
+  "tourId": "test-125",
+  "tourName": "Тестовый тур Золотое кольцо",
+  "price": "2500000",
+  "userId": "test-user3",
+  "userName": "Финальный Тест",
+  "userPhone": "+998901122334",
+  "status": "FISCALIZED",
+  "createdAt": "2025-03-14T15:37:40.222Z",
+  "clickTransId": "987654321",
+  "paidAt": "2025-03-14T15:38:17.141Z",
+  "fiscalizedAt": "2025-03-14T15:38:52.605Z",
+  "fiscalQRCode": "https://api.click.uz/ofd/qr/XYZ987DEF654"
+}

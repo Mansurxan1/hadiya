@@ -1,0 +1,11 @@
+{
+  "orderId": "1741966027692",
+  "tourId": "test-123",
+  "tourName": "Тестовый тур в Самарканд",
+  "price": "1500000",
+  "userId": "test-user",
+  "userName": "Тестовый Пользователь",
+  "userPhone": "+998901234567",
+  "status": "Click to'loviga yo'naltirildi",
+  "createdAt": "2025-03-14T15:27:07.693Z"
+}
