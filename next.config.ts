@@ -17,6 +17,9 @@ const nextConfig = {
       "neuro.uz",
     ],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   async rewrites() {
     return [
       {
@@ -29,8 +32,3 @@ const nextConfig = {
 
 module.exports = nextConfig;
 
-
-
-  // eslint: {
-  //   ignoreDuringBuilds: true,
-  // },
