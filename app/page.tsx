@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import AboutSection from "@/components/AboutSection";
 import Banner from "@/components/Banner";
 import Maps from "@/components/Maps";
@@ -11,18 +10,6 @@ import Testimonials from "@/components/Testimonials";
 import Visa from "@/components/Visa";
 
 const Page = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-
-    const handleBeforeUnload = () => {
-      window.scrollTo(0, 0);
-    };
-
-    window.addEventListener("beforeunload", handleBeforeUnload);
-    return () => {
-      window.removeEventListener("beforeunload", handleBeforeUnload);
-    };
-  }, []);
 
   return (
     <main
