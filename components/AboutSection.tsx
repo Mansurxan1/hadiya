@@ -23,12 +23,10 @@ export default function AboutSection() {
   const scale = useTransform(scrollYProgress, [0, 0.5], [0.95, 1]);
 
   const scrollToSection = (id: string) => {
-    // Функция для выполнения скролла
     const performScroll = () => {
       const element = document.getElementById(id);
       if (element) {
-        // Используем более надежный способ скролла с учетом смещения для заголовка
-        const headerOffset = 100; // Примерная высота хедера
+        const headerOffset = 100;
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
         
@@ -37,7 +35,6 @@ export default function AboutSection() {
           behavior: "smooth"
         });
         
-        // Добавляем подсветку элемента, чтобы пользователь видел, куда произошел скролл
         element.classList.add('highlight-section');
         setTimeout(() => {
           element.classList.remove('highlight-section');
@@ -47,8 +44,6 @@ export default function AboutSection() {
       } else {
         console.warn(`Элемент с id "${id}" не найден при первой попытке. Пробуем еще раз...`);
         
-        // Если элемент не найден, попробуем еще раз через секунду
-        // Это может помочь, если компоненты загружаются асинхронно
         setTimeout(() => {
           const retryElement = document.getElementById(id);
           if (retryElement) {
@@ -74,7 +69,6 @@ export default function AboutSection() {
       }
     };
     
-    // Запустим первую попытку скролла немедленно
     performScroll();
   };
 
@@ -215,7 +209,7 @@ export default function AboutSection() {
               {[
                 { href: "https://t.me/hadiyatravel", icon: FaTelegram, label: "Telegram" },
                 { href: "https://instagram.com/hadiyatravel", icon: RiInstagramFill, label: "Instagram" },
-                { href: "https://tiktok.com/@hadiyatravel", icon: FaTiktok, label: "TikTok" },
+                { href: "https://www.tiktok.com/@hadiyatravel", icon: FaTiktok, label: "TikTok" },
                 { href: "mailto:idealjamoa1@gmail.com", icon: FiMail, label: "Email" },
               ].map((social, index) => (
                 <motion.a

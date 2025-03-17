@@ -84,7 +84,7 @@ const Footer = () => {
   const socialLinks = [
     { href: "https://t.me/hadiyatravel", icon: <FaTelegram />, label: "Telegram" },
     { href: "https://instagram.com/hadiyatravel", icon: <RiInstagramFill />, label: "Instagram" },
-    { href: "https://tiktok.com/@hadiyatravel", icon: <FaTiktok />, label: "TikTok" },
+    { href: "https://www.tiktok.com/@hadiyatravel", icon: <FaTiktok />, label: "TikTok" },
   ];
 
   return (
