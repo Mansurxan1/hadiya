@@ -198,11 +198,11 @@ const TourDetail = () => {
 
         if (data.success && data.redirectUrl) {
           console.log(`Переход к оплате тура ${tour.id} на сумму ${tour.price}`)
-          
+
           if (data.orderId) {
-            localStorage.setItem('lastOrderId', data.orderId)
+            localStorage.setItem("lastOrderId", data.orderId)
           }
-          
+
           window.location.href = data.redirectUrl
         } else {
           console.error("Ошибка при создании платежа:", data)
@@ -231,11 +231,10 @@ const TourDetail = () => {
           style={{ backgroundAttachment: "fixed" }}
         >
           <Image
-            src={tour.image}
+            src={tour.image || "/placeholder.svg"}
             alt={t(`${translationKey}.${tour.id}.title`)}
             layout="fill"
             objectFit="cover"
-            priority
             className="w-full h-full transition-transform duration-500 hover:scale-102"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/60" />
@@ -254,17 +253,17 @@ const TourDetail = () => {
 
       <div className="max-w-[1700px] mx-auto px-5 py-10">
         <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            className="mb-4"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          className="mb-4"
+        >
+          <button
+            onClick={() => window.history.back()}
+            className="bg-gradient-to-br bg-[#333b3f] border border-white/20 text-white px-6 py-3 rounded-lg font-medium text-lg shadow-md hover:shadow-lg transition-all duration-300 hover:from-gray-600 hover:to-gray-700 hover:scale-105"
           >
-            <button
-              onClick={() => window.history.back()}
-              className="bg-gradient-to-br bg-[#333b3f] border border-white/20 text-white px-6 py-3 rounded-lg font-medium text-lg shadow-md hover:shadow-lg transition-all duration-300 hover:from-gray-600 hover:to-gray-700 hover:scale-105"
-            >
-              {t("back")}
-            </button>
+            {t("back")}
+          </button>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 mb-6">
           <ScrollAnimatedCard variants={cardVariants}>
