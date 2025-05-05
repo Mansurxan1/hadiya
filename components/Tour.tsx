@@ -60,12 +60,12 @@ const Tour = () => {
                     className="w-full h-[150px] phone-max:h-[200px] sm:h-[250px] object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 duration-300" />
-                  <div className="absolute top-2 sm:top-4 right-2 sm:right-4 text-gray-200 bg-green-500 text-xs sm:text-sm font-semibold py-1 px-1 sm:px-2 rounded-full transition-all duration-300 group-hover:bg-teal-600">
+                  <div className="absolute top-2 sm:top-4 right-2 sm:right-4 text-gray-200 bg-green-500 text-xs sm:text-sm font-semibold py-1 px-2 rounded-full transition-all duration-300 group-hover:bg-teal-600">
                     {formatPrice(tour.price)} {t("uzs")}
                   </div>
                 </div>
                 <div className="p-2 sm:p-3 text-center transition-colors duration-300 group-hover:text-white">
-                  <h3 className="text-lg sm:text-xl text-left font-bold h-[48px] sm:h-[56px] bg-gradient-to-r from-green-300 to-green-500 bg-clip-text text-transparent mb-1 sm:mb-2 line-clamp-2 transition-all duration-300 group-hover:text-white">
+                  <h3 className="text-lg sm:text-xl text-left font-bold h-[55px] sm:h-[56px] bg-gradient-to-r from-green-300 to-green-500 bg-clip-text text-transparent mb-1 sm:mb-2 line-clamp-2 transition-all duration-300 group-hover:text-white">
                     {t(`${translationKey}.${tour.id}.title`)}
                   </h3>
                   <p className="text-sm sm:text-base text-left text-gray-300 pt-1 sm:pt-2 mb-2 sm:mb-4 line-clamp-2 transition-colors duration-300 group-hover:text-gray-100">
