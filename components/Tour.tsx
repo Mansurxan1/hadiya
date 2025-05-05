@@ -65,7 +65,7 @@ const Tour = () => {
                   </div>
                 </div>
                 <div className="p-2 sm:p-3 text-center transition-colors duration-300 group-hover:text-white">
-                  <h3 className="text-lg sm:text-xl text-left font-bold min-h-[40px] sm:min-h-[56px] bg-gradient-to-r from-green-300 to-green-500 bg-clip-text text-transparent mb-1 sm:mb-2 line-clamp-2 transition-all duration-300 group-hover:text-white">
+                  <h3 className="text-lg sm:text-xl text-left font-bold h-[48px] sm:h-[56px] bg-gradient-to-r from-green-300 to-green-500 bg-clip-text text-transparent mb-1 sm:mb-2 line-clamp-2 transition-all duration-300 group-hover:text-white">
                     {t(`${translationKey}.${tour.id}.title`)}
                   </h3>
                   <p className="text-sm sm:text-base text-left text-gray-300 pt-1 sm:pt-2 mb-2 sm:mb-4 line-clamp-2 transition-colors duration-300 group-hover:text-gray-100">
@@ -74,9 +74,9 @@ const Tour = () => {
                     </span>
                     {t(`${translationKey}.${tour.id}.description`)}
                   </p>
-                  <div className="w-[90%] text-gray-100 px-2 sm:px-4 py-2 sm:py-3 rounded-lg text-base sm:text-base font-medium transition-all duration-300 bg-green-600 hover:bg-gradient-to-r hover:from-teal-600 hover:to-blue-700 hover:scale-105">
+                  <button className="w-[90%] text-gray-100 px-2 sm:px-4 py-2 sm:py-3 rounded-lg text-base sm:text-base font-medium transition-all duration-300 bg-green-600 hover:bg-gradient-to-r hover:from-teal-600 hover:to-blue-700 hover:scale-105">
                     {t("inDetail")}
-                  </div>
+                  </button>
                 </div>
               </div>
             </Link>
