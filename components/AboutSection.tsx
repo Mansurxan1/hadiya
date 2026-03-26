@@ -119,11 +119,11 @@ export default function AboutSection() {
                 className="relative group"
               >
                 <Image
-                  src="/favicon.ico"
+                  src="/logo.png"
                   alt="Hadiya Travel Logo"
                   width={100}
                   height={100}
-                  className="rounded-full border-4 border-green-500/60 shadow-xl transition-all duration-500 group-hover:scale-105 group-hover:shadow-green-500/50 phone-min:w-[50px] sm:w-[100px] sm:h-[100px]"
+                  className="w-auto"
                 />
               </motion.div>
               <motion.h1

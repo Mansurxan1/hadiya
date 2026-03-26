@@ -34,26 +34,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "TravelAgency",
-    "name": "Hadiya Travel",
-    "url": "https://hadiya-travel.uz",
-    "logo": "https://hadiya-travel.uz/favicon.ico",
-    "description": descriptions[lang],
-    "address": {
+    name: "Hadiya Travel",
+    url: "https://hadiya-travel.uz",
+    logo: "https://hadiya-travel.uz/logo.png",
+    description: descriptions[lang],
+    address: {
       "@type": "PostalAddress",
-      "streetAddress": "Tashkent city, Shaykhantakhur district, Samarkand Darvoza 6",
-      "addressLocality": "Tashkent",
-      "postalCode": "100000",
-      "addressCountry": "UZ",
+      streetAddress:
+        "Tashkent city, Shaykhantakhur district, Samarkand Darvoza 6",
+      addressLocality: "Tashkent",
+      postalCode: "100000",
+      addressCountry: "UZ",
     },
-    "contactPoint": {
+    contactPoint: {
       "@type": "ContactPoint",
-      "telephone": "+998 97 038 38 33",
-      "contactType": "customer service",
+      telephone: "+998 97 038 38 33",
+      contactType: "customer service",
     },
-    "availableLanguage": [
-      { "@type": "Language", "name": "Uzbek", "alternateName": "uz" },
-      { "@type": "Language", "name": "Russian", "alternateName": "ru" },
-      { "@type": "Language", "name": "English", "alternateName": "en" },
+    availableLanguage: [
+      { "@type": "Language", name: "Uzbek", alternateName: "uz" },
+      { "@type": "Language", name: "Russian", alternateName: "ru" },
+      { "@type": "Language", name: "English", alternateName: "en" },
     ],
   };
 
@@ -62,13 +63,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+        <link rel="icon" href="/logo.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="/logo.png" type="image/x-icon" />
 
         <title>{titles[lang]}</title>
         <meta name="description" content={descriptions[lang]} />
-        
+
         <meta property="og:title" content={titles[lang]} />
         <meta property="og:description" content={descriptions[lang]} />
         <meta property="og:type" content="website" />
@@ -76,19 +77,29 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta property="og:image" content="https://hadiya-travel.uz/logo.png" />
         <meta property="og:image:alt" content="Hadiya Travel Logo" />
         <meta property="og:site_name" content="Hadiya Travel" />
-        <meta property="og:locale" content={lang === "ru" ? "ru_RU" : lang === "en" ? "en_US" : "uz_UZ"} />
+        <meta
+          property="og:locale"
+          content={lang === "ru" ? "ru_RU" : lang === "en" ? "en_US" : "uz_UZ"}
+        />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={titles[lang]} />
         <meta name="twitter:description" content={descriptions[lang]} />
-        <meta name="twitter:image" content="https://hadiya-travel.uz/logo.png" />
+        <meta
+          name="twitter:image"
+          content="https://hadiya-travel.uz/logo.png"
+        />
         <meta name="twitter:image:alt" content="Hadiya Travel Logo" />
 
         <link rel="canonical" href="https://hadiya-travel.uz" />
         <link rel="alternate" hrefLang="uz" href="https://hadiya-travel.uz" />
         <link rel="alternate" hrefLang="ru" href="https://hadiya-travel.uz" />
         <link rel="alternate" hrefLang="en" href="https://hadiya-travel.uz" />
-        <link rel="alternate" hrefLang="x-default" href="https://hadiya-travel.uz" />
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href="https://hadiya-travel.uz"
+        />
 
         <script
           type="application/ld+json"
