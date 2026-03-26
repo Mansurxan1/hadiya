@@ -15,6 +15,7 @@ const nextConfig = {
       "static-maps.yandex.ru",
       "waterparktenerife.com",
       "neuro.uz",
+      "img.poehalisnami.uz"
     ],
   },
   eslint: {

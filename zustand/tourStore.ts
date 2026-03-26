@@ -18,7 +18,7 @@ interface TourState {
   medicaltour: Tour[];
 }
 
-export const useTourStore = create<TourState>((set) => ({
+export const useTourStore = create<TourState>(() => ({
   tours: [
     {
       id: "xiva",
@@ -86,7 +86,7 @@ export const useTourStore = create<TourState>((set) => ({
       information: "",
       day: "",
       price: 4200000,
-      image: "https://toping.uz/storage/articles/8194/loL1QhNT2smSXk2eJjfQqHDp81q5Dnxs.webp",
+      image: "https://img.poehalisnami.uz/static/hotels/egipet/sharm-el-shejjkh/h74746/orig/booking74746_174746_638693856915620978.jpg",
     },
     {
       id: "doha",

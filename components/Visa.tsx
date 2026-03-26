@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import type { NextPage } from "next";
 import { CheckCircle, PhoneCall } from "lucide-react";
@@ -9,93 +9,231 @@ const Visa: NextPage = () => {
 
   return (
     <section className="flex items-center justify-center p-5">
-      <div className="max-w-[900px] w-full space-y-12">
-        <h2 className="text-center text-3xl text-green-500 font-bold">{t("visa_services")}</h2>
-        <div className="relative bg-gray-800/50 border border-white/40 rounded-xl shadow-lg px-5 py-3 overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-2" />
-          <h3 className="text-2xl font-bold text-center mb-5 text-green-500">{t("saudi_visa_service")}</h3>
+      <div className="max-w-[1200px] w-full space-y-14">
+        <h2 className="text-center text-4xl text-green-500 font-bold">
+          {t("visa_services")}
+        </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="rounded-lg p-3 bg-gray-800/50 transition-colors duration-300">
-              <h4 className="text-xl font-semibold mb-4 text-green-500">{t("tourist_visa")}</h4>
-              <ul className="space-y-3 text-white">
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="text-green-400 w-5 h-5" /> {t("valid_for_1_year")}
+        <div className="relative bg-gray-800/50 border border-white/40 rounded-2xl shadow-lg px-6 py-9 overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-500 to-green-600" />
+
+          <h3 className="text-3xl font-bold text-center mb-8 text-green-500">
+            {t("saudi_visa_service")}
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="rounded-2xl p-7 bg-gray-800/70 border border-white/20">
+              <h4 className="text-2xl font-semibold mb-6 text-green-400">
+                {t("tourist_visa")}
+              </h4>
+              <ul className="space-y-5 text-white text-lg">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="text-green-400 w-7 h-7 mt-0.5 flex-shrink-0" />
+                  {t("valid_for_1_year")}
                 </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="text-green-400 w-5 h-5" /> {t("stay_up_to_90_days")}
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="text-green-400 w-7 h-7 mt-0.5 flex-shrink-0" />
+                  {t("stay_up_to_90_days")}
                 </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="text-green-400 w-5 h-5" /> {t("multiple_entries")}
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="text-green-400 w-7 h-7 mt-0.5 flex-shrink-0" />
+                  {t("multiple_entries")}
                 </li>
-                <li className="text-green-400 text-lg font-bold">{t("visaPrice")}: 135$</li>
+                <li className="text-green-400 text-3xl font-bold mt-6">
+                  {t("visaPrice")}: 1 350 000 {t("currency")}
+                </li>
               </ul>
             </div>
 
-            <div className="rounded-lg p-3 bg-gray-800/50 transition-colors duration-300">
-              <h4 className="text-xl font-semibold mb-4 text-green-500">{t("umrah_visa")}</h4>
-              <ul className="space-y-3 text-white">
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="text-green-400 w-5 h-5" /> {t("valid_for_1_year")}
+            <div className="rounded-2xl p-7 bg-gray-800/70 border border-white/20">
+              <h4 className="text-2xl font-semibold mb-6 text-green-400">
+                {t("umrah_visa")}
+              </h4>
+              <ul className="space-y-5 text-white text-lg">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="text-green-400 w-7 h-7 mt-0.5 flex-shrink-0" />
+                  {t("valid_for_1_year")}
                 </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="text-green-400 w-5 h-5" /> {t("single_entry")}
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="text-green-400 w-7 h-7 mt-0.5 flex-shrink-0" />
+                  {t("single_entry")}
                 </li>
-                <li className="text-green-400 text-lg font-bold">{t("visaPrice")}: 155$</li>
+                <li className="text-green-400 text-3xl font-bold mt-6">
+                  {t("visaPrice")}: 1 350 000 {t("currency")}
+                </li>
               </ul>
             </div>
-          </div>
-
-          <div className="mt-5 text-center">
-            <p className="text-lg font-medium text-green-400">{t("contact_us")}:</p>
-            <a
-              href="tel:+998970383833"
-              className="inline-flex items-center gap-2 text-gray-100 mt-1 bg-green-700 p-2 rounded-lg text-xl font-semibold hover:text-white/80 transition-colors duration-200"
-            >
-              <PhoneCall className="w-6 h-6" /> {t("phone_number")}
-            </a>
           </div>
         </div>
 
-        <div className="relative bg-gray-800/50 border border-white/40 rounded-xl shadow-lg p-5 overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-2" />
-          <h3 className="text-2xl font-bold text-center mb-5 text-green-400">{t("india_visa_services")}</h3>
+        <div className="relative bg-gray-800/50 border border-white/40 rounded-2xl shadow-lg px-6 py-9 overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-500 to-green-600" />
+
+          <h3 className="text-3xl font-bold text-center mb-10 text-green-500">
+            {t("travel_education_visas")}
+          </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="rounded-lg p-4 bg-gray-800/50 transition-colors duration-300">
-              <h4 className="text-xl font-semibold mb-4 text-green-500">{t("travel_visa")}</h4>
-              <ul className="space-y-3 text-white">
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="text-green-400 w-5 h-5" /> {t("30_day_travel_visa")}
-                  <span className="ml-2 text-green-400 font-bold">$50</span>
+            <div className="rounded-2xl p-7 bg-gray-800/70 border border-white/20">
+              <div className="flex items-center gap-4 mb-6">
+                <h4 className="text-2xl font-semibold text-green-400">
+                  {t("schengen_visa")}
+                </h4>
+              </div>
+              <ul className="space-y-4 text-white text-lg">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="text-green-400 w-6 h-6 mt-1 flex-shrink-0" />
+                  {t("valid_for_1_year")}
                 </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="text-green-400 w-5 h-5" /> {t("1_year_travel_e_visa")}
-                  <span className="ml-2 text-green-400 font-bold">$70</span>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="text-green-400 w-6 h-6 mt-1 flex-shrink-0" />
+                  {t("multiple_countries")}
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="text-green-400 w-6 h-6 mt-1 flex-shrink-0" />
+                  {t("tourism_purpose")}
+                </li>
+                <li className="text-green-400 text-2xl font-bold mt-6">
+                  {t("prices")}: 2,500,000 {t("currency")}
                 </li>
               </ul>
             </div>
 
-            <div className="rounded-lg p-4 bg-gray-800/50 transition-colors duration-300">
-              <h4 className="text-xl font-semibold mb-4 text-green-500">{t("medical_visa")}</h4>
-              <ul className="space-y-3 text-white">
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="text-green-400 w-5 h-5" /> {t("60_day_medical_e_visa")}
-                  <span className="ml-2 text-green-400 font-bold">$120</span>
+            <div className="rounded-2xl p-7 bg-gray-800/70 border border-white/20">
+              <div className="flex items-center gap-4 mb-6">
+                <h4 className="text-2xl font-semibold text-green-400">
+                  {t("japan_visa")}
+                </h4>
+              </div>
+              <ul className="space-y-4 text-white text-lg">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="text-green-400 w-6 h-6 mt-1 flex-shrink-0" />
+                  {t("tourist_purpose")}
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="text-green-400 w-6 h-6 mt-1 flex-shrink-0" />
+                  {t("short_term_travel")}
+                </li>
+                <li className="text-green-400 text-2xl font-bold mt-6">
+                  {t("prices")}: 1,200,000 {t("currency")}
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl p-7 bg-gray-800/70 border border-white/20">
+              <div className="flex items-center gap-4 mb-6">
+                <h4 className="text-2xl font-semibold text-green-400">
+                  {t("uk_visa")}
+                </h4>
+              </div>
+              <ul className="space-y-4 text-white text-lg">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="text-green-400 w-6 h-6 mt-1 flex-shrink-0" />
+                  {t("tourist_business_visa")}
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="text-green-400 w-6 h-6 mt-1 flex-shrink-0" />
+                  {t("education_business_visa")}
+                </li>
+                <li className="text-green-400 text-2xl font-bold mt-6">
+                  {t("prices")}: 3,500,000 {t("currency")}
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl p-7 bg-gray-800/70 border border-white/20">
+              <div className="flex items-center gap-4 mb-6">
+                <h4 className="text-2xl font-semibold text-green-400">
+                  {t("umrah_tourist_visa")}
+                </h4>
+              </div>
+              <ul className="space-y-4 text-white text-lg">
+                <li className="text-green-400 text-2xl font-bold mt-6">
+                  {t("prices")}: 1,350,000 {t("currency")}
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl p-7 bg-gray-800/70 border border-white/20">
+              <div className="flex items-center gap-4 mb-6">
+                <h4 className="text-2xl font-semibold text-green-400">
+                  {t("india_visa")}
+                </h4>
+              </div>
+              <ul className="space-y-4 text-white text-lg">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="text-green-400 w-6 h-6 mt-1 flex-shrink-0" />
+                  {t("tourism_visa")}
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="text-green-400 w-6 h-6 mt-1 flex-shrink-0" />
+                  {t("education_visa")}
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="text-green-400 w-6 h-6 mt-1 flex-shrink-0" />
+                  {t("medical_visa")}
+                </li>
+                <li className="text-green-400 text-2xl font-bold mt-6">
+                  {t("prices")}: 699,000 {t("currency")}
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl p-7 bg-gray-800/70 border border-white/20">
+              <div className="flex items-center gap-4 mb-6">
+                <h4 className="text-2xl font-semibold text-green-400">
+                  {t("pakistan_visa")}
+                </h4>
+              </div>
+              <ul className="space-y-4 text-white text-lg">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="text-green-400 w-6 h-6 mt-1 flex-shrink-0" />
+                  {t("tourist_family_visa")}
+                </li>
+                <li className="text-green-400 text-2xl font-bold mt-6">
+                  {t("prices")}: 699,000 {t("currency")}
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-2xl p-7 bg-gray-800/70 border border-white/20">
+              <div className="flex items-center gap-4 mb-6">
+                <h4 className="text-2xl font-semibold text-green-400">
+                  {t("hongkong_visa")}
+                </h4>
+              </div>
+              <ul className="space-y-4 text-white text-lg">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="text-green-400 w-6 h-6 mt-1 flex-shrink-0" />
+                  {t("tourism_visa")}
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="text-green-400 w-6 h-6 mt-1 flex-shrink-0" />
+                  {t("education_visa")}
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="text-green-400 w-6 h-6 mt-1 flex-shrink-0" />
+                  {t("business_work_visa")}
+                </li>
+                <li className="text-green-400 text-2xl font-bold mt-6">
+                  {t("prices")}: 1,800,000 {t("currency")}
                 </li>
               </ul>
             </div>
           </div>
+        </div>
 
-          <div className="mt-8 text-center">
-            <p className="text-lg font-medium text-green-400">{t("contact_us")}:</p>
-            <a
-              href="tel:+998970383833"
-              className="inline-flex items-center gap-2 text-gray-100 mt-1 bg-green-700 p-2 rounded-lg text-xl font-semibold hover:text-white/80 transition-colors duration-200"
-            >
-              <PhoneCall className="w-6 h-6" /> {t("phone_number")}
-            </a>
-          </div>
+        <div className="text-center pt-8">
+          <p className="text-xl font-medium text-green-400 mb-5">
+            {t("contact_us")}:
+          </p>
+          <a
+            href="tel:+998880383838"
+            className="inline-flex items-center gap-4 bg-green-700 hover:bg-green-600 transition-all text-white text-2xl font-semibold px-12 py-6 rounded-2xl"
+          >
+            <PhoneCall className="w-8 h-8" />
+            {t("phone_number")}
+          </a>
         </div>
       </div>
     </section>

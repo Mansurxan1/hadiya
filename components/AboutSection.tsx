@@ -2,7 +2,7 @@
 
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
-import { FaTelegram, FaTiktok } from "react-icons/fa";
+import { FaTelegram, FaWhatsapp } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import { FiPhoneCall, FiMail, FiClock } from "react-icons/fi";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -28,70 +28,82 @@ export default function AboutSection() {
       if (element) {
         const headerOffset = 100;
         const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-        
+        const offsetPosition =
+          elementPosition + window.pageYOffset - headerOffset;
+
         window.scrollTo({
           top: offsetPosition,
-          behavior: "smooth"
+          behavior: "smooth",
         });
-        
-        element.classList.add('highlight-section');
+
+        element.classList.add("highlight-section");
         setTimeout(() => {
-          element.classList.remove('highlight-section');
+          element.classList.remove("highlight-section");
         }, 1500);
-        
+
         console.log(`Успешно выполнен скролл к элементу с id "${id}"`);
       } else {
-        console.warn(`Элемент с id "${id}" не найден при первой попытке. Пробуем еще раз...`);
-        
+        console.warn(
+          `Элемент с id "${id}" не найден при первой попытке. Пробуем еще раз...`
+        );
+
         setTimeout(() => {
           const retryElement = document.getElementById(id);
           if (retryElement) {
             const headerOffset = 100;
             const elementPosition = retryElement.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-            
+            const offsetPosition =
+              elementPosition + window.pageYOffset - headerOffset;
+
             window.scrollTo({
               top: offsetPosition,
-              behavior: "smooth"
+              behavior: "smooth",
             });
-            
-            retryElement.classList.add('highlight-section');
+
+            retryElement.classList.add("highlight-section");
             setTimeout(() => {
-              retryElement.classList.remove('highlight-section');
+              retryElement.classList.remove("highlight-section");
             }, 1500);
-            
-            console.log(`Успешно выполнен скролл к элементу с id "${id}" после повторной попытки`);
+
+            console.log(
+              `Успешно выполнен скролл к элементу с id "${id}" после повторной попытки`
+            );
           } else {
-            console.error(`Элемент с id "${id}" не найден после повторной попытки`);
+            console.error(
+              `Элемент с id "${id}" не найден после повторной попытки`
+            );
           }
         }, 1000);
       }
     };
-    
+
     performScroll();
   };
 
   useEffect(() => {
     const handleHashChange = () => {
-      if (window.location.hash === '#contact') {
-        scrollToSection('contact');
+      if (window.location.hash === "#contact") {
+        scrollToSection("contact");
       }
     };
 
-    if (window.location.hash === '#contact') {
-      scrollToSection('contact');
+    if (window.location.hash === "#contact") {
+      scrollToSection("contact");
     }
 
-    window.addEventListener('hashchange', handleHashChange);
-    
+    window.addEventListener("hashchange", handleHashChange);
+
     return () => {
-      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener("hashchange", handleHashChange);
     };
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="py-5 relative overflow-hidden text-white">
+    <section
+      id="about"
+      ref={sectionRef}
+      className="py-5 relative overflow-hidden text-white"
+    >
       <div className="max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-7 lg:gap-16">
           <motion.div
@@ -165,12 +177,12 @@ export default function AboutSection() {
               className="flex flex-col phone-max:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-4"
             >
               <a
-                href="tel:+998970383833"
+                href="tel:+998880383838"
                 className="inline-flex items-center bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold py-2 px-4 sm:py-3 sm:px-6 rounded-xl shadow-md hover:shadow-lg hover:from-green-700 hover:to-green-800 transition-all duration-300 transform hover:scale-105"
                 aria-label="Call Hadiya Travel"
               >
                 <FiPhoneCall className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
-                <span>+998 97 038-38-33</span>
+                <span>+998 88 038-38-38</span>
               </a>
               <p className="inline-flex items-center bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold py-2 px-4 sm:py-3 sm:px-6 rounded-xl shadow-md hover:shadow-lg hover:from-green-700 hover:to-green-800 transition-all duration-300 transform hover:scale-105">
                 <FiClock className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
@@ -207,16 +219,36 @@ export default function AboutSection() {
               className="flex flex-wrap justify-center lg:justify-end gap-4 sm:gap-6"
             >
               {[
-                { href: "https://t.me/hadiyatravel", icon: FaTelegram, label: "Telegram" },
-                { href: "https://instagram.com/hadiyatravel", icon: RiInstagramFill, label: "Instagram" },
-                { href: "https://www.tiktok.com/@hadiyatravel", icon: FaTiktok, label: "TikTok" },
-                { href: "mailto:idealjamoa1@gmail.com", icon: FiMail, label: "Email" },
+                {
+                  href: "https://t.me/hadiyatravel",
+                  icon: FaTelegram,
+                  label: "Telegram",
+                },
+                {
+                  href: "https://instagram.com/hadiyatravel",
+                  icon: RiInstagramFill,
+                  label: "Instagram",
+                },
+                {
+                  href: "https://wa.me/998970383833",
+                  icon: FaWhatsapp,
+                  label: "WhatsApp",
+                },
+                {
+                  href: "mailto:idealjamoa1@gmail.com",
+                  icon: FiMail,
+                  label: "Email",
+                },
               ].map((social, index) => (
                 <motion.a
                   key={index}
                   href={social.href}
                   target={social.href.startsWith("http") ? "_blank" : undefined}
-                  rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  rel={
+                    social.href.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                   className="p-3 sm:p-4 bg-gradient-to-br from-white/10 to-green-500/20 rounded-full text-green-400 hover:bg-green-500 hover:text-white transition-all duration-300 shadow-md hover:shadow-green-500/50"

@@ -8,11 +8,15 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
+import uz from "../public/uz.jpg";
+import ru from "../public/ru.png";
+import en from "../public/en.png";
+
 export default function Navbar() {
   const { t, i18n } = useTranslation();
-  const [dropdownOpen, setDropdownOpen] = useState(false); 
-  const [isScrolled, setIsScrolled] = useState(false); 
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false); 
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -41,13 +45,15 @@ export default function Navbar() {
     i18n.changeLanguage(lang);
     localStorage.setItem("lang", lang);
     setDropdownOpen(false);
+    setMobileMenuOpen(false);
   };
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       const offset = 120;
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const elementPosition =
+        element.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({
         top: elementPosition - offset,
         behavior: "smooth",
@@ -65,8 +71,16 @@ export default function Navbar() {
 
   const modalVariants = {
     hidden: { y: "-100%", opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.7, ease: "easeInOut" } },
-    exit: { y: "100%", opacity: 0, transition: { duration: 0.7, ease: "easeInOut" } },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.7, ease: "easeInOut" },
+    },
+    exit: {
+      y: "100%",
+      opacity: 0,
+      transition: { duration: 0.7, ease: "easeInOut" },
+    },
   };
 
   const backdropVariants = {
@@ -82,6 +96,18 @@ export default function Navbar() {
       opacity: 1,
       transition: { delay: index * 0.1, duration: 0.5, ease: "easeOut" },
     }),
+  };
+
+  const getFlagImage = (lang: string) => {
+    if (lang === "uz") return uz;
+    if (lang === "ru") return ru;
+    if (lang === "en") return en;
+    return uz;
+  };
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+    setDropdownOpen(false);
   };
 
   return (
@@ -100,9 +126,9 @@ export default function Navbar() {
                 width={60}
                 height={60}
                 priority
-                className="h-10 phone-max:h-[70px] w-auto transition-transform duration-300 group-hover:scale-105 rounded-full shadow-lg shadow-green-500/20"
+                className="h-10 phone-max:h-[70px] w-auto p-1.5 bg-[#333b3f]/90 rounded-full"
               />
-              <div className="absolute -inset-1 bg-gradient-to-r from-green-400 to-[#333b3f] rounded-full blur opacity-20 group-hover:opacity-40 transition-all duration-300"></div>
+              <div className="absolute rounded-full transition-all duration-300"></div>
             </div>
           </Link>
         </div>
@@ -127,43 +153,72 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="flex items-center gap-1 phone-min:gap-2">
+        <div className="flex items-center gap-1 phone-min:gap-1">
           <a
-            href="tel:+998970383833"
+            href="tel:+998880383838"
             className="group flex items-center font-medium p-2 sm:px-4 text-xs phone-min:text-sm sm:text-lg bg-[#333b3f] text-white hover:text-gray-800 rounded-full border border-green-500 shadow-2xl hover:bg-green-500 transition-all"
           >
-            <Phone size={18} className="mr-2 text-green-400 animate-pulse group-hover:text-red-500" />
-            +998 97 038-38-33
+            <Phone
+              size={18}
+              className="mr-2 text-green-400 animate-pulse group-hover:text-red-500 hidden sm:inline"
+            />
+            +998 88 038-38-38
           </a>
-
 
           <div className="relative">
             <button
               onClick={() => setDropdownOpen(!dropdownOpen)}
-              className="bg-[#333b3f] cursor-pointer text-xs phone-min:text-sm sm:text-lg text-white px-4 py-2 rounded-full flex items-center border border-green-500 shadow-2xl hover:bg-green-500 transition-all duration-300"
+              className="bg-[#333b3f] cursor-pointer text-xs phone-min:text-sm sm:text-lg text-white px-3 py-2 rounded-full flex items-center gap-1 border border-green-500 shadow-2xl hover:bg-green-500 transition-all duration-300"
             >
-              {i18n.language.toUpperCase()}
+              <Image
+                src={getFlagImage(i18n.language)}
+                alt="flag"
+                width={32}
+                height={24}
+                className="rounded-sm object-cover h-6 w-8"
+              />
               <ChevronDown size={16} className="ml-1" />
             </button>
 
             {dropdownOpen && (
-              <div className="absolute right-0 mt-2 w-24 bg-[#333b3f] text-white rounded-md shadow-lg overflow-hidden">
+              <div className="absolute right-0 mt-2 w-40 bg-[#333b3f] text-white rounded-xl shadow-xl overflow-hidden border border-green-500/30 z-50">
                 <button
                   onClick={() => changeLanguage("uz")}
-                  className="block w-full cursor-pointer p-2 text-left hover:bg-green-500/20"
+                  className="flex items-center gap-3 w-full px-4 py-3 text-left hover:bg-green-500/20"
                 >
-                  O&#39;zbek
+                  <Image
+                    src={uz}
+                    alt="O'zbek"
+                    width={32}
+                    height={24}
+                    className="rounded-sm object-cover"
+                  />
+                  O'zbek
                 </button>
                 <button
                   onClick={() => changeLanguage("ru")}
-                  className="block w-full cursor-pointer p-2 text-left hover:bg-green-500/20"
+                  className="flex items-center gap-3 w-full px-4 py-3 text-left hover:bg-green-500/20"
                 >
+                  <Image
+                    src={ru}
+                    alt="Русский"
+                    width={32}
+                    height={24}
+                    className="rounded-sm object-cover"
+                  />
                   Русский
                 </button>
                 <button
                   onClick={() => changeLanguage("en")}
-                  className="block w-full cursor-pointer p-2 text-left hover:bg-green-500/20"
+                  className="flex items-center gap-3 w-full px-4 py-3 text-left hover:bg-green-500/20"
                 >
+                  <Image
+                    src={en}
+                    alt="English"
+                    width={32}
+                    height={24}
+                    className="rounded-sm object-cover"
+                  />
                   English
                 </button>
               </div>
@@ -172,7 +227,7 @@ export default function Navbar() {
 
           <button
             className="lg:hidden text-white relative w-10 h-10 flex items-center justify-center rounded-full bg-[#333b3f] border border-green-500 shadow-lg hover:bg-green-500/20 transition-all duration-300"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={toggleMobileMenu}
             aria-label="menu open"
           >
             <div className="absolute transition-all duration-500">
@@ -215,7 +270,7 @@ export default function Navbar() {
             <motion.div
               className="relative w-11/12 max-w-md bg-[#333b3f]/95 rounded-2xl shadow-2xl shadow-green-500/30 border border-green-500/40"
               variants={modalVariants}
-              onClick={(e) => e.stopPropagation()} 
+              onClick={(e) => e.stopPropagation()}
             >
               <div className="p-6 space-y-6">
                 {navItems.map((item, index) => (
@@ -235,6 +290,48 @@ export default function Navbar() {
                     {item.label}
                   </motion.button>
                 ))}
+
+                <div className="pt-4 border-t border-green-500/30">
+                  <button
+                    onClick={() => changeLanguage("uz")}
+                    className="flex items-center gap-3 w-full px-4 py-4 text-left hover:bg-green-500/20 rounded-xl transition-all"
+                  >
+                    <Image
+                      src={uz}
+                      alt="O'zbek"
+                      width={32}
+                      height={24}
+                      className="rounded-sm object-cover"
+                    />
+                    O'zbek
+                  </button>
+                  <button
+                    onClick={() => changeLanguage("ru")}
+                    className="flex items-center gap-3 w-full px-4 py-4 text-left hover:bg-green-500/20 rounded-xl transition-all"
+                  >
+                    <Image
+                      src={ru}
+                      alt="Русский"
+                      width={32}
+                      height={24}
+                      className="rounded-sm object-cover"
+                    />
+                    Русский
+                  </button>
+                  <button
+                    onClick={() => changeLanguage("en")}
+                    className="flex items-center gap-3 w-full px-4 py-4 text-left hover:bg-green-500/20 rounded-xl transition-all"
+                  >
+                    <Image
+                      src={en}
+                      alt="English"
+                      width={32}
+                      height={24}
+                      className="rounded-sm object-cover"
+                    />
+                    English
+                  </button>
+                </div>
               </div>
 
               <button

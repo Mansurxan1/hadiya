@@ -5,7 +5,12 @@ import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { FaEnvelope, FaMapMarkerAlt, FaTelegram, FaTiktok } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaTelegram,
+  FaWhatsapp,
+} from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import { FiPhoneCall } from "react-icons/fi";
 
@@ -37,7 +42,8 @@ const Footer = () => {
     const element = document.getElementById(id);
     if (element) {
       const offset = 120;
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const elementPosition =
+        element.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({
         top: elementPosition - offset,
         behavior: "smooth",
@@ -47,7 +53,11 @@ const Footer = () => {
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
   };
 
   const staggerContainer = {
@@ -76,15 +86,24 @@ const Footer = () => {
     { id: "contact", label: t("contact"), path: "/contact" },
   ];
 
-  const otherPages = [
-    { id: "refund-policy", label: t("contract"), href: "" },
-    { id: "faq", label: t("faq"), href: "/" },
-  ];
+  const otherPages = [{ label: t("contract"), href: "/shartnoma.docx" }];
 
   const socialLinks = [
-    { href: "https://t.me/hadiyatravel", icon: <FaTelegram />, label: "Telegram" },
-    { href: "https://instagram.com/hadiyatravel", icon: <RiInstagramFill />, label: "Instagram" },
-    { href: "https://www.tiktok.com/@hadiyatravel", icon: <FaTiktok />, label: "TikTok" },
+    {
+      href: "https://t.me/hadiyatravel",
+      icon: <FaTelegram />,
+      label: "Telegram",
+    },
+    {
+      href: "https://instagram.com/hadiyatravel",
+      icon: <RiInstagramFill />,
+      label: "Instagram",
+    },
+    {
+      href: "https://wa.me/998970383833",
+      icon: <FaWhatsapp />,
+      label: "WhatsApp",
+    },
   ];
 
   return (
@@ -107,14 +126,17 @@ const Footer = () => {
             variants={fadeInUp}
             className="flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6"
           >
-            <Link href="/" className="flex items-center justify-center gap-3 group">
+            <Link
+              href="/"
+              className="flex items-center justify-center gap-3 group"
+            >
               <div className="relative">
                 <Image
                   src="/logo.png"
                   alt="HADIYA TRAVEL Logo"
                   width={isMobile ? 40 : 50}
                   height={isMobile ? 40 : 50}
-                  className="object-cover rounded-full transform group-hover:scale-110 transition-transform duration-400 ease-in-out shadow-lg shadow-green-500/30"
+                  className="object-cover rounded-full transform group-hover:scale-110 transition-transform duration-400 ease-in-out"
                 />
                 <div className="absolute -inset-1 bg-gradient-to-r from-green-500/20 via-gold-500/20 to-[#333b3f] rounded-full blur-md opacity-30 group-hover:opacity-50 transition-all duration-400"></div>
               </div>
@@ -143,20 +165,31 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          <motion.div variants={fadeInUp} className="w-full text-center md:text-left md:max-w-[70%]">
+          <motion.div
+            variants={fadeInUp}
+            className="w-full text-center md:text-left md:max-w-[70%]"
+          >
             <p className="text-base font-light text-gray-200 leading-relaxed tracking-wide">
               {t("footerInfo")}
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
-            <motion.div variants={fadeInUp} className="text-center md:text-left">
+            <motion.div
+              variants={fadeInUp}
+              className="text-center md:text-left"
+            >
               <h3 className="text-[clamp(1.1rem,2vw,1.25rem)] font-semibold mb-4 sm:mb-6 text-green-500">
                 {t("info")}
               </h3>
               <ul className="space-y-[clamp(0.5rem,2vh,0.8rem)] mx-auto md:text-left">
                 {quickLinks.map((link, index) => (
-                  <motion.li key={link.id} custom={index} variants={itemVariants} className="group">
+                  <motion.li
+                    key={link.id}
+                    custom={index}
+                    variants={itemVariants}
+                    className="group"
+                  >
                     <button
                       onClick={() => scrollToSection(link.id)}
                       className="text-[clamp(1rem,1.5vw,1.2rem)] mx-auto md:mx-0 font-medium text-gray-200 hover:text-green-400 transition-all duration-300 flex items-center justify-center md:justify-start gap-2 cursor-pointer"
@@ -171,28 +204,52 @@ const Footer = () => {
               </ul>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="text-center md:text-left">
+            <motion.div
+              variants={fadeInUp}
+              className="text-center md:text-left"
+            >
               <h3 className="text-[clamp(1.1rem,2vw,1.3rem)] font-semibold mb-4 sm:mb-6 text-green-400">
                 {t("privacy")}
               </h3>
               <ul className="space-y-[clamp(0.5rem,2vh,1.25rem)]">
                 {otherPages.map((page, index) => (
-                  <motion.li key={page.id} custom={index} variants={itemVariants} className="group">
-                    <Link
+                  <motion.li
+                    key={index}
+                    custom={index}
+                    variants={itemVariants}
+                    className="group"
+                  >
+                    <a
                       href={page.href}
+                      target={
+                        page.href.endsWith(".docx") ? "_blank" : undefined
+                      }
+                      rel={
+                        page.href.endsWith(".docx")
+                          ? "noopener noreferrer"
+                          : undefined
+                      }
                       className="text-[clamp(1rem,1.5vw,1.2rem)] font-medium text-gray-200 hover:text-green-400 transition-all duration-300 flex items-center justify-center md:justify-start gap-2"
+                      download={
+                        page.href.endsWith(".docx")
+                          ? "shartnoma.docx"
+                          : undefined
+                      }
                     >
                       <span className="w-0 h-0.5 bg-gradient-to-r from-green-400 to-gold-500 rounded-full transition-all duration-300 group-hover:w-[clamp(0.75rem,2vw,1.5rem)]" />
                       <span className="transform group-hover:translate-x-2 transition-transform duration-300">
                         {page.label}
                       </span>
-                    </Link>
+                    </a>
                   </motion.li>
                 ))}
               </ul>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="sm:col-span-2 lg:col-span-2 text-center md:text-left">
+            <motion.div
+              variants={fadeInUp}
+              className="sm:col-span-2 lg:col-span-2 text-center md:text-left"
+            >
               <h3 className="text-[clamp(1.1rem,2vw,1.3rem)] font-semibold mb-4 sm:mb-6 text-green-500">
                 {t("contact")}
               </h3>
@@ -204,10 +261,10 @@ const Footer = () => {
                       <FiPhoneCall className="text-white text-[clamp(0.80rem,1.5vw,1.2rem)]" />
                     </div>
                     <a
-                      href="tel:+998970383833"
+                      href="tel:+998880383838"
                       className="text-[clamp(1rem,1.5vw,1.2rem)] text-gray-200 hover:text-green-400 transition-colors duration-300"
                     >
-                      +998 97 038-38-33
+                      +998 88 038-38-38
                     </a>
                   </div>
 
@@ -228,15 +285,21 @@ const Footer = () => {
                   <div className="flex items-center justify-center mt-1">
                     <FaMapMarkerAlt className="text-white w-[30px] h-[30px] text-[clamp(0.75rem,1.5vw,1rem)]" />
                   </div>
-                  <span className="text-[clamp(1rem,1.5vw,1.2rem)] max-w-[260px] text-gray-300">{t("address")}</span>
+                  <span className="text-[clamp(1rem,1.5vw,1.2rem)] max-w-[260px] text-gray-300">
+                    {t("address")}
+                  </span>
                 </div>
               </div>
             </motion.div>
           </div>
 
-          <motion.div variants={fadeInUp} className=" pt-4 border-t border-gray-700/30 text-center">
+          <motion.div
+            variants={fadeInUp}
+            className="pt-4 border-t border-gray-700/30 text-center"
+          >
             <p className="text-[clamp(0.8rem,1.2vw,1rem)] text-gray-400">
-              © {new Date().getFullYear()} HADIYA TRAVEL. {t("allRightsReserved")}
+              © {new Date().getFullYear()} HADIYA TRAVEL.{" "}
+              {t("allRightsReserved")}
             </p>
           </motion.div>
         </motion.div>

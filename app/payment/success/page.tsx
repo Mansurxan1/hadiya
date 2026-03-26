@@ -126,13 +126,13 @@ const SuccessModalContent = ({ onClose }: { onClose: () => void }) => {
         </p>
 
         <a
-          href="tel:+998970383833"
+          href="tel:+998880383838"
           className="inline-flex items-center justify-center mb-8 px-6 py-3 bg-gradient-to-r from-green-500 to-teal-600 text-white font-semibold text-lg rounded-full shadow-lg hover:from-green-600 hover:to-teal-700 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
           </svg>
-          +998 97 038 38 33
+          +998 88 038 38 38
         </a>
 
         {orderDetails && (
@@ -180,13 +180,3 @@ const PaymentSuccessModal = () => {
 }
 
 export default PaymentSuccessModal
-
-const customStyles = `
-  @keyframes spin-slow {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  .animate-spin-slow {
-    animation: spin-slow 3s linear infinite;
-  }
-`

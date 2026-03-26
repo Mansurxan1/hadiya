@@ -13,12 +13,17 @@ const Maps: NextPage = () => {
   const [phone, setPhone] = useState("+998");
   const [message, setMessage] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [errors, setErrors] = useState<{ fullName?: string; phone?: string; message?: string }>({});
+  const [errors, setErrors] = useState<{
+    fullName?: string;
+    phone?: string;
+    message?: string;
+  }>({});
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-  const mapUrl = `https://static-maps.yandex.ru/1.x/?ll=69.211950,41.301972&z=17&l=map&size=600,400&pt=69.211950,41.301972,pm2rdm`;
-  const yandexMapLink = "https://yandex.com/maps/?ll=69.211950,41.301972&z=17&pt=69.211950,41.301972,pm2rdm";
+  const mapUrl = `https://static-maps.yandex.ru/1.x/?ll=69.22320160466326,41.29259413771443&z=16&l=map&size=600,400&pt=69.22335851623139,41.292553226210195,pm2rdm`;
+  const yandexMapLink =
+    "https://yandex.uz/maps?ll=69.22320160466326%2C41.29259413771443&z=16&pt=69.22335851623139%2C41.292553226210195";
 
   const TELEGRAM_BOT_TOKEN = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN;
   const TELEGRAM_CHAT_ID = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID;
@@ -42,7 +47,11 @@ const Maps: NextPage = () => {
     }
   };
 
-  const sendToTelegram = async (fullName: string, phone: string, message: string) => {
+  const sendToTelegram = async (
+    fullName: string,
+    phone: string,
+    message: string
+  ) => {
     const text = `📝 *Yangi xabar*\n👤 *Ism familiya:* ${fullName}\n📞 *Telefon:* ${phone}\n💬 *Xabar:* ${message}`;
     const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
 
@@ -67,7 +76,8 @@ const Maps: NextPage = () => {
   };
 
   const validateForm = () => {
-    const newErrors: { fullName?: string; phone?: string; message?: string } = {};
+    const newErrors: { fullName?: string; phone?: string; message?: string } =
+      {};
 
     if (!fullName.trim()) newErrors.fullName = t("errors.fullName");
 
@@ -131,7 +141,10 @@ const Maps: NextPage = () => {
             </h2>
             <form onSubmit={handleSubmit} className="space-y-2">
               <div>
-                <label htmlFor="fullName" className="block text-base font-medium text-gray-300">
+                <label
+                  htmlFor="fullName"
+                  className="block text-base font-medium text-gray-300"
+                >
                   {t("fullName")}
                 </label>
                 <input
@@ -142,10 +155,17 @@ const Maps: NextPage = () => {
                   className="mt-1 block w-full p-2 focus:ring-green-500 focus:border-green-500 transition-all bg-gray-700/30 outline-none border border-gray-600 rounded-md text-white placeholder-gray-400 placeholder:text-sm"
                   placeholder={t("fullNamePlaceholder")}
                 />
-                {errors.fullName && <p className="text-red-500 text-base mt-1">{errors.fullName}</p>}
+                {errors.fullName && (
+                  <p className="text-red-500 text-base mt-1">
+                    {errors.fullName}
+                  </p>
+                )}
               </div>
               <div>
-                <label htmlFor="phone" className="block text-base font-medium text-gray-300">
+                <label
+                  htmlFor="phone"
+                  className="block text-base font-medium text-gray-300"
+                >
                   {t("phone")}
                 </label>
                 <input
@@ -155,10 +175,15 @@ const Maps: NextPage = () => {
                   onChange={handlePhoneChange}
                   className="mt-1 block w-full p-2 focus:ring-green-500 focus:border-green-500 transition-all bg-gray-700/30 outline-none border border-gray-600 rounded-md text-white"
                 />
-                {errors.phone && <p className="text-red-500 text-base mt-1">{errors.phone}</p>}
+                {errors.phone && (
+                  <p className="text-red-500 text-base mt-1">{errors.phone}</p>
+                )}
               </div>
               <div>
-                <label htmlFor="message" className="block text-base font-medium text-gray-300">
+                <label
+                  htmlFor="message"
+                  className="block text-base font-medium text-gray-300"
+                >
                   {t("message")}
                 </label>
                 <textarea
@@ -169,13 +194,19 @@ const Maps: NextPage = () => {
                   placeholder={t("messagePlaceholder")}
                   rows={4}
                 />
-                {errors.message && <p className="text-red-500 text-base mt-1">{errors.message}</p>}
+                {errors.message && (
+                  <p className="text-red-500 text-base mt-1">
+                    {errors.message}
+                  </p>
+                )}
               </div>
             </form>
           </div>
 
           {errorMessage && (
-            <p className="text-red-500 text-sm mt-3 text-center">{errorMessage}</p>
+            <p className="text-red-500 text-sm mt-3 text-center">
+              {errorMessage}
+            </p>
           )}
 
           <button
@@ -198,7 +229,12 @@ const Maps: NextPage = () => {
         </div>
 
         <div className="w-full md-lg:w-1/2 h-[200px] phone-max:h-[300px] md-lg:h-auto flex items-center">
-          <a href={yandexMapLink} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+          <a
+            href={yandexMapLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full h-full"
+          >
             <Image
               src={mapUrl}
               alt={t("mapAlt")}
@@ -220,7 +256,9 @@ const Maps: NextPage = () => {
             className="bg-gray-700 p-6 rounded-xl shadow-lg text-center max-w-md w-full"
             onClick={(e) => e.stopPropagation()}
           >
-            <h2 className="text-xl font-semibold text-green-300 mb-4">{t("modalTitle")}</h2>
+            <h2 className="text-xl font-semibold text-green-300 mb-4">
+              {t("modalTitle")}
+            </h2>
             <p className="text-gray-300 mb-6">{t("modalMessage")}</p>
             <button
               onClick={closeModal}
