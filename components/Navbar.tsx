@@ -193,7 +193,7 @@ export default function Navbar() {
                     height={24}
                     className="rounded-sm object-cover"
                   />
-                  O'zbek
+                  O&#39;zbek
                 </button>
                 <button
                   onClick={() => changeLanguage("ru")}
@@ -303,7 +303,7 @@ export default function Navbar() {
                       height={24}
                       className="rounded-sm object-cover"
                     />
-                    O'zbek
+                    O&#39;zbek
                   </button>
                   <button
                     onClick={() => changeLanguage("ru")}
