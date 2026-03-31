@@ -12,7 +12,6 @@ const partners: string[] = [
   "https://static.tildacdn.com/tild3061-3839-4035-b135-313262643832/turkish-airlines-1.svg",
   "https://static.tildacdn.com/tild3735-6330-4662-b366-643563633232/aeroflot-russian-air.svg",
   "https://static.tildacdn.com/tild3064-3262-4766-b462-313264386332/qanot-sharq.svg",
-  "https://static.tildacdn.com/tild3362-6230-4262-a265-346536633036/saudia.svg",
   "https://static.tildacdn.com/tild6433-3665-4561-b736-613739636462/airarabia.svg",
   "https://static.tildacdn.com/tild3737-6432-4161-b936-663634643737/flynas.svg",
   "https://static.tildacdn.com/tild6265-3430-4231-b166-636635353362/jazeera.svg",

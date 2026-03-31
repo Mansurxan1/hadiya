@@ -143,17 +143,6 @@
     }
   },
   "worldtour": {
-    "saudiya": {
-      "title": "Saudi Arabia, Excursion to Mecca and Medina",
-      "day": "14-day",
-      "services": "Flight ticket, hotel, transport across all routes, tourist visa, two meals a day in Medina, three meals a day in Mecca",
-      "separately": "Personal expenses",
-      "hotel": "Regency Hotel",
-      "hotelstar": "2",
-      "information": "Mecca and Medina, the holiest cities of Saudi Arabia, welcome millions of Muslim pilgrims annually. These cities are of great importance to Islam and are visited by Muslims to perform Hajj and Umrah.",
-      "description": "General excursion in Medina, general excursion in Mecca",
-      "visa": "Tourist visa required, international passport"
-    },
     "vietnam": {
       "title": "Vietnam - Phu Quoc, crystal-clear waters, white sandy beaches, and tropical nature",
       "day": "7 days.",

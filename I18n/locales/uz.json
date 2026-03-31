@@ -142,17 +142,6 @@
     }
   },
   "worldtour": {
-    "saudiya": {
-      "title": "Saudiya Arabistoni, Makka va Madinada ekskursiya",
-      "day": "14 kunlik",
-      "services": "Aviachipta, Mehmonxona, Barcha yo'nalish bo'yicha transport, Turistik viza, Madinada ikki mahal ovqatlanish, Makkada uch mahal ovqatlanish",
-      "separately": "Shaxsiy xarajatlar",
-      "hotel": "Regency Hotel",
-      "hotelstar": "2",
-      "information": "Saudiya Arabistonining eng muqaddas shaharlaridan bo‘lmish Makka va Madina har yili millionlab musulmon ziyoratchilarni qabul qiladi. Bu shaharlar Islom dini uchun muhim bo‘lib, Haj va Umra ibodatlarini ado etish uchun musulmonlar tomonidan ziyorat qilinadi. Makka Islom dinining eng muqaddas shahri bo‘lib, Payg‘ambar Muhammad (s.a.v.) shu yerda tug‘ilgan va Islomning ilk yillari shu shaharda o‘tgan. Madina Payg‘ambar Muhammad (s.a.v.) hijrat qilgan va Islom davlatining ilk poytaxti bo‘lgan shahar hisoblanadi.",
-      "description": "Madina shahrida umumiy ekskursiya, Makka shahrida umumiy ekskursiya",
-      "visa": "Turistik viza talab qilinadi, zagran pasport"
-    },
     "vietnam": {
       "title": "Vietnam - Fukuok, kristalldek tiniq suv, oq qumli plyajlar, va tropik tabiat",
       "day": "7 kunlik",

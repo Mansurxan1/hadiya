@@ -56,17 +56,6 @@ export const useTourStore = create<TourState>(() => ({
   ],
   worldtour: [
     {
-      id: "saudiya",
-      title: "",
-      description: "",
-      services: "",
-      separately: "",
-      information: "",
-      day: "",
-      price: 12500000,
-      image: "https://aniq.uz/photos/news/hIODMrZ9LP36eyJ.jpeg",
-    },
-    {
       id: "vietnam",
       title: "",
       description: "",

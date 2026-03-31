@@ -20,11 +20,11 @@ const Page = () => {
     >
       <div className="relative min-h-screen w-full">
         <Banner />
-        <AboutSection />
         <Tour />
         <ServicesSection />
         <Visa />
         <Partners />
+        <AboutSection />
         <Testimonials />
         <Maps />
       </div>
