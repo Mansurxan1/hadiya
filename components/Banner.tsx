@@ -55,7 +55,6 @@ const Banner: React.FC = () => {
                 height={675}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-sky-50 to-transparent"></div>
               <div className="absolute left-0 top-1/2 transform -translate-y-1/2 text-sky-600 px-4 py-6 sm:px-6 sm:py-8 md:px-12 md:py-16 max-w-full">
                 <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-5 drop-shadow-lg">
                   {bannerTexts[index]?.title}
