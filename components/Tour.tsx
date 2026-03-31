@@ -57,7 +57,7 @@ const Tour = () => {
             className="w-full max-w-[300px] sm:max-w-[400px] mr-2.5 sm:mr-5"
           >
             <Link href={`/tour/${type}/${tour.id}`} className="block">
-              <div className="relative bg-sky-500 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-100 cursor-pointer">
+              <div className="relative bg-sky-800/50 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-100 cursor-pointer">
                 <div className="relative group">
                   <Image
                     src={tour.image}
