@@ -18,7 +18,7 @@ const Page = () => {
         backgroundImage: "url('/bg.jpeg')",
       }}
     >
-      <div className="relative min-h-screen w-full bg-black/50">
+      <div className="relative min-h-screen w-full">
         <Banner />
         <AboutSection />
         <Tour />

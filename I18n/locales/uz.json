@@ -285,5 +285,6 @@
   "back_to_home": "Bosh sahifaga qaytish",
   "unknown": "Noma'lum",
   "payment_successful": "To'lov muvaffaqiyatli",
-  "payment_failed": "To'lov muvaffaqiyatsiz"
+  "payment_failed": "To'lov muvaffaqiyatsiz",
+  "payWithClick": "Click orqali to'lash"
 }

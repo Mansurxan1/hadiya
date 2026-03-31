@@ -134,16 +134,16 @@ const Maps: NextPage = () => {
   return (
     <section id="contact" className="flex items-center justify-center p-5">
       <div className="max-w-[1700px] w-full flex flex-col md-lg:flex-row gap-8 text-white">
-        <div className="w-full md-lg:w-1/2 p-3 rounded-xl shadow-xl flex flex-col justify-between bg-gray-800/70">
+        <div className="w-full md-lg:w-1/2 p-3 rounded-xl shadow-xl flex flex-col justify-between bg-sky-800/70">
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 text-green-400">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 text-sky-500">
               {t("contactInfo")}
             </h2>
             <form onSubmit={handleSubmit} className="space-y-2">
               <div>
                 <label
                   htmlFor="fullName"
-                  className="block text-base font-medium text-gray-300"
+                  className="block text-base font-medium"
                 >
                   {t("fullName")}
                 </label>
@@ -152,7 +152,7 @@ const Maps: NextPage = () => {
                   id="fullName"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  className="mt-1 block w-full p-2 focus:ring-green-500 focus:border-green-500 transition-all bg-gray-700/30 outline-none border border-gray-600 rounded-md text-white placeholder-gray-400 placeholder:text-sm"
+                  className="mt-1 block w-full p-2 focus:ring-sky-500 focus:border-sky-500 transition-all bg-gray-700/30 outline-none border border-sky-600 rounded-md text-white placeholder:text-sm"
                   placeholder={t("fullNamePlaceholder")}
                 />
                 {errors.fullName && (
@@ -162,10 +162,7 @@ const Maps: NextPage = () => {
                 )}
               </div>
               <div>
-                <label
-                  htmlFor="phone"
-                  className="block text-base font-medium text-gray-300"
-                >
+                <label htmlFor="phone" className="block text-base font-medium">
                   {t("phone")}
                 </label>
                 <input
@@ -173,7 +170,7 @@ const Maps: NextPage = () => {
                   id="phone"
                   value={phone}
                   onChange={handlePhoneChange}
-                  className="mt-1 block w-full p-2 focus:ring-green-500 focus:border-green-500 transition-all bg-gray-700/30 outline-none border border-gray-600 rounded-md text-white"
+                  className="mt-1 block w-full p-2 focus:ring-sky-500 focus:border-sky-500 transition-all bg-gray-700/30 outline-none border border-gray-600 rounded-md text-white"
                 />
                 {errors.phone && (
                   <p className="text-red-500 text-base mt-1">{errors.phone}</p>
@@ -182,7 +179,7 @@ const Maps: NextPage = () => {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-base font-medium text-gray-300"
+                  className="block text-base font-medium"
                 >
                   {t("message")}
                 </label>
@@ -190,7 +187,7 @@ const Maps: NextPage = () => {
                   id="message"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  className="mt-1 w-full p-1 px-2 bg-gray-700/30 outline-none border border-gray-600 rounded-md text-white placeholder-gray-400 focus:ring-green-500 focus:border-green-500 transition-all h-20 phone-max:h-32 resize-none"
+                  className="mt-1 w-full p-1 px-2 bg-sky-700/30 outline-none border border-sky-600 rounded-md text-white placeholder-gray-400 focus:ring-sky-500 focus:border-sky-500 transition-all h-20 phone-max:h-32 resize-none"
                   placeholder={t("messagePlaceholder")}
                   rows={4}
                 />
@@ -212,8 +209,8 @@ const Maps: NextPage = () => {
           <button
             type="submit"
             onClick={handleSubmit}
-            className={`w-full text-gray-100 p-2 md:py-3 rounded-xl bg-green-600 mt-5 font-semibold relative ${
-              isLoading ? "opacity-50 cursor-not-allowed" : ""
+            className={`w-full text-gray-100 p-2 md:py-3 rounded-xl bg-sky-600 mt-5 font-semibold relative ${
+              isLoading ? "opacity-100 cursor-not-allowed" : ""
             }`}
             disabled={isLoading}
           >
@@ -253,16 +250,16 @@ const Maps: NextPage = () => {
           onClick={closeModal}
         >
           <div
-            className="bg-gray-700 p-6 rounded-xl shadow-lg text-center max-w-md w-full"
+            className="bg-sky-700 p-6 rounded-xl shadow-lg text-center max-w-md w-full"
             onClick={(e) => e.stopPropagation()}
           >
-            <h2 className="text-xl font-semibold text-green-300 mb-4">
+            <h2 className="text-xl font-semibold text-white mb-4">
               {t("modalTitle")}
             </h2>
             <p className="text-gray-300 mb-6">{t("modalMessage")}</p>
             <button
               onClick={closeModal}
-              className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition-all"
+              className="bg-sky-500 text-white px-4 py-2 rounded-md hover:bg-sky-600 transition-all"
             >
               {t("close")}
             </button>

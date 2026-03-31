@@ -55,12 +55,12 @@ const Banner: React.FC = () => {
                 height={675}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#333b3f]/40 to-transparent"></div>
-              <div className="absolute left-0 top-1/2 transform -translate-y-1/2 text-white px-4 py-6 sm:px-6 sm:py-8 md:px-12 md:py-16 max-w-full">
+              <div className="absolute inset-0 bg-gradient-to-t from-sky-50 to-transparent"></div>
+              <div className="absolute left-0 top-1/2 transform -translate-y-1/2 text-sky-600 px-4 py-6 sm:px-6 sm:py-8 md:px-12 md:py-16 max-w-full">
                 <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-5 drop-shadow-lg">
                   {bannerTexts[index]?.title}
                 </h2>
-                <p className="text-base phone-max:text-lg md:text-3xl lg:text-4xl text-green-200 font-medium w-full sm:w-3/4 drop-shadow-md">
+                <p className="text-base phone-max:text-lg md:text-3xl lg:text-4xl text-sky-400 font-medium w-full sm:w-3/4 drop-shadow-md">
                   {bannerTexts[index]?.description}
                 </p>
               </div>

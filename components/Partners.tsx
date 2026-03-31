@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-import Image from "next/image"; 
+import Image from "next/image";
 import "swiper/css";
 import "swiper/css/autoplay";
 
@@ -21,7 +21,7 @@ const partners: string[] = [
 ];
 
 export default function Partners() {
-  const { t } = useTranslation(); 
+  const { t } = useTranslation();
 
   return (
     <section className="pb-7 text-white">
@@ -31,26 +31,26 @@ export default function Partners() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-2xl md:text-3xl text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-green-500 pb-5"
+          className="text-2xl md:text-3xl text-center font-bold pb-5"
         >
-          {t("partners.title")} 
+          {t("partners.title")}:
         </motion.h2>
 
         <Swiper
-          spaceBetween={20} 
-          slidesPerView={5} 
-          loop={true} 
+          spaceBetween={20}
+          slidesPerView={5}
+          loop={true}
           autoplay={{
-            delay: 2000, 
-            disableOnInteraction: false, 
+            delay: 2000,
+            disableOnInteraction: false,
           }}
           breakpoints={{
-            1024: { slidesPerView: 5 }, 
-            768: { slidesPerView: 4 }, 
-            480: { slidesPerView: 4 }, 
+            1024: { slidesPerView: 5 },
+            768: { slidesPerView: 4 },
+            480: { slidesPerView: 4 },
             320: { slidesPerView: 3 },
           }}
-          modules={[Autoplay]} 
+          modules={[Autoplay]}
         >
           {partners.map((logo, index) => (
             <SwiperSlide key={index}>
@@ -63,10 +63,10 @@ export default function Partners() {
               >
                 <Image
                   src={logo}
-                  alt={`Hamkor ${index + 1}`} 
-                  width={128} 
-                  height={96} 
-                  className="object-cover h-22 md:h-32 w-full rounded-lg sm:rounded-2xl" 
+                  alt={`Hamkor ${index + 1}`}
+                  width={128}
+                  height={96}
+                  className="object-cover h-22 md:h-32 w-full rounded-lg sm:rounded-2xl"
                 />
               </motion.div>
             </SwiperSlide>

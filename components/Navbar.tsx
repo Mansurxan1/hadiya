@@ -113,7 +113,9 @@ export default function Navbar() {
   return (
     <nav
       className={`${
-        isScrolled ? "bg-[#333b3f] shadow-lg" : "bg-transparent"
+        isScrolled
+          ? "bg-gradient-to-br from-white via-sky-500 to-white text-white overflow-hidden transition-all duration-500"
+          : "bg-transparent"
       } px-2 py-4 sm:p-5 text-white fixed w-full z-50 transition-all duration-300`}
     >
       <div className="max-w-[1700px] mx-auto flex justify-between items-center">
@@ -126,7 +128,7 @@ export default function Navbar() {
                 width={60}
                 height={60}
                 priority
-                className="h-10 phone-max:h-[70px] w-auto p-1.5 bg-[#333b3f]/90 rounded-full"
+                className="h-10 phone-max:h-[70px] w-auto p-1.5 bg-white rounded-full"
               />
               <div className="absolute rounded-full transition-all duration-300"></div>
             </div>
@@ -135,17 +137,17 @@ export default function Navbar() {
 
         <div
           className={`${
-            isScrolled ? "" : "bg-[#333b3f]/90"
+            isScrolled ? "bg-white" : "bg-white"
           } items-center hidden lg:flex gap-8 px-4 py-2 rounded-full backdrop-blur-md`}
         >
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`px-4 py-2 font-bold rounded-full transition-all duration-300 ${
+              className={`px-4 py-2 font-bold text-sky-500 rounded-full transition-all duration-300 ${
                 pathname === item.path
-                  ? "bg-green-500 text-white shadow-md"
-                  : "hover:bg-green-500/20 hover:text-green-300"
+                  ? "bg-green-500"
+                  : "hover:bg-green-500/20 hover:text-green-500"
               }`}
             >
               {item.label}
@@ -156,7 +158,7 @@ export default function Navbar() {
         <div className="flex items-center gap-1 phone-min:gap-1">
           <a
             href="tel:+998880383838"
-            className="group flex items-center font-medium p-2 sm:px-4 text-xs phone-min:text-sm sm:text-lg bg-[#333b3f] text-white hover:text-gray-800 rounded-full border border-green-500 shadow-2xl hover:bg-green-500 transition-all"
+            className="group flex items-center font-medium p-2 sm:px-4 text-xs phone-min:text-sm sm:text-lg bg-white text-sky-500 hover:text-green-500 rounded-full border border-green-500 shadow-2xl  transition-all"
           >
             <Phone
               size={18}
@@ -168,7 +170,7 @@ export default function Navbar() {
           <div className="relative">
             <button
               onClick={() => setDropdownOpen(!dropdownOpen)}
-              className="bg-[#333b3f] cursor-pointer text-xs phone-min:text-sm sm:text-lg text-white px-3 py-2 rounded-full flex items-center gap-1 border border-green-500 shadow-2xl hover:bg-green-500 transition-all duration-300"
+              className="bg-white cursor-pointer text-xs phone-min:text-sm sm:text-lg text-sky-500 px-3 py-2 rounded-full flex items-center gap-1 border border-green-500 hover:border-0 shadow-2xl hover:bg-green-500/20 transition-all duration-300"
             >
               <Image
                 src={getFlagImage(i18n.language)}
@@ -181,10 +183,10 @@ export default function Navbar() {
             </button>
 
             {dropdownOpen && (
-              <div className="absolute right-0 mt-2 w-40 bg-[#333b3f] text-white rounded-xl shadow-xl overflow-hidden border border-green-500/30 z-50">
+              <div className="absolute right-0 mt-2 w-40 bg-white text-white rounded-xl shadow-xl overflow-hidden border border-green-500/30 z-50">
                 <button
                   onClick={() => changeLanguage("uz")}
-                  className="flex items-center gap-3 w-full px-4 py-3 text-left hover:bg-green-500/20"
+                  className="flex items-center gap-3 w-full px-4 py-3 text-left hover:bg-sky-500/20"
                 >
                   <Image
                     src={uz}

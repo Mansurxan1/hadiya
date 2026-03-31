@@ -44,21 +44,23 @@ const Testimonials: React.FC = () => {
   return (
     <section className="text-white">
       <div className="max-w-[1700px] mx-auto px-5">
-        <h2 className="text-2xl md:text-[28px] text-green-400 md-lg:text-3xl font-bold text-center mb-5">
-          {t("customer_reviews")}
+        <h2 className="text-2xl md:text-[28px] md-lg:text-3xl font-bold text-center mb-5">
+          {t("customer_reviews")}:
         </h2>
         <div className="grid phone-min:grid-cols-1 phone-max:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
           {testimonials.slice(0, visibleCount).map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white/10 backdrop-blur-lg p-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              className="bg-sky-800/50 backdrop-blur-lg p-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
             >
               <div className="mb-4">
-                <h3 className="text-base md:text-xl font-semibold">{t(testimonial.name)}</h3>
+                <h3 className="text-base md:text-xl font-semibold">
+                  {t(testimonial.name)}
+                </h3>
                 <p className="text-xs text-gray-400">{t(testimonial.role)}</p>
               </div>
               <p className="text-gray-200 text-sm md:text-base italic">
-                {t(testimonial.review).replace(/"/g, "&quot;")} 
+                {t(testimonial.review).replace(/"/g, "&quot;")}
               </p>
             </div>
           ))}

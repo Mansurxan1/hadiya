@@ -286,5 +286,6 @@
   "back_to_home": "Back to Home",
   "unknown": "Unknown",
   "payment_successful": "Payment Successful",
-  "payment_failed": "Payment Failed"
+  "payment_failed": "Payment Failed",
+  "payWithClick": "Pay with Click"
 }

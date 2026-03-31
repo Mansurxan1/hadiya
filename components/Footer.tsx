@@ -108,12 +108,11 @@ const Footer = () => {
 
   return (
     <footer
-      className={`relative bg-gradient-to-br from-[#1E2A44] via-[#2a3236] to-[#1E2A44] text-white overflow-hidden transition-all duration-500 ${
-        isScrolled ? "shadow-xl border-t border-green-600/30" : "shadow-lg"
+      className={`relative bg-gradient-to-br from-white via-sky-500 to-white text-white overflow-hidden transition-all duration-500 ${
+        isScrolled ? "shadow-xl border-t border-sky-600/30" : "shadow-lg"
       }`}
     >
-      <div className="absolute inset-0 bg-gradient-to-t from-green-900/10 to-transparent pointer-events-none" />
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500/50 via-gold-500/50 to-green-500/50" />
+      <div className="absolute inset-0 bg-gradient-to-t from-sky-900/10 to-transparent pointer-events-none" />
       <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12 relative z-10">
         <motion.div
           variants={staggerContainer}
@@ -138,9 +137,8 @@ const Footer = () => {
                   height={isMobile ? 40 : 50}
                   className="object-cover rounded-full transform group-hover:scale-110 transition-transform duration-400 ease-in-out"
                 />
-                <div className="absolute -inset-1 bg-gradient-to-r from-green-500/20 via-gold-500/20 to-[#333b3f] rounded-full blur-md opacity-30 group-hover:opacity-50 transition-all duration-400"></div>
               </div>
-              <span className="text-[clamp(1.25rem,4vw,2rem)] font-extrabold text-green-400 group-hover:from-green-400 group-hover:to-gold-600 transition-all duration-400">
+              <span className="text-[clamp(1.25rem,4vw,2rem)] font-extrabold text-sky-500 group-hover:from-sky-600 group-hover:to-sky-600 transition-all duration-400">
                 HADIYA TRAVEL
               </span>
             </Link>
@@ -155,7 +153,7 @@ const Footer = () => {
                   aria-label={`${social.label} Hadiya Travel`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 flex items-center justify-center bg-gradient-to-r from-green-500 to-green-700 rounded-full hover:from-green-600 hover:to-gold-500 hover:scale-110 transition-all duration-400 shadow-lg shadow-green-500/20 group"
+                  className="w-12 h-12 flex items-center justify-center bg-gradient-to-r from-sky-600 to-sky-700 text-white font-semibold rounded-full shadow-md hover:shadow-lg hover:from-sky-700 hover:to-sky-200 transition-all duration-300 transform hover:scale-15"
                 >
                   <span className="text-white text-2xl group-hover:scale-125 transition-transform duration-300">
                     {social.icon}
@@ -169,7 +167,7 @@ const Footer = () => {
             variants={fadeInUp}
             className="w-full text-center md:text-left md:max-w-[70%]"
           >
-            <p className="text-base font-light text-gray-200 leading-relaxed tracking-wide">
+            <p className="text-base font-bold text-sky-600 leading-relaxed tracking-wide">
               {t("footerInfo")}
             </p>
           </motion.div>
@@ -179,7 +177,7 @@ const Footer = () => {
               variants={fadeInUp}
               className="text-center md:text-left"
             >
-              <h3 className="text-[clamp(1.1rem,2vw,1.25rem)] font-semibold mb-4 sm:mb-6 text-green-500">
+              <h3 className="text-[clamp(1.1rem,2vw,1.25rem)] font-semibold mb-4 sm:mb-6">
                 {t("info")}
               </h3>
               <ul className="space-y-[clamp(0.5rem,2vh,0.8rem)] mx-auto md:text-left">
@@ -192,9 +190,9 @@ const Footer = () => {
                   >
                     <button
                       onClick={() => scrollToSection(link.id)}
-                      className="text-[clamp(1rem,1.5vw,1.2rem)] mx-auto md:mx-0 font-medium text-gray-200 hover:text-green-400 transition-all duration-300 flex items-center justify-center md:justify-start gap-2 cursor-pointer"
+                      className="text-[clamp(1rem,1.5vw,1.2rem)] mx-auto md:mx-0 font-medium text-white hover:text-sky-600 transition-all duration-300 flex items-center justify-center md:justify-start gap-2 cursor-pointer"
                     >
-                      <span className="w-0 h-0.5 bg-gradient-to-r from-green-400 to-gold-500 rounded-full transition-all duration-300 group-hover:w-[clamp(0.75rem,2vw,1.5rem)]" />
+                      <span className="w-0 h-0.5 bg-gradient-to-r from-sky-400 to-sky-500 rounded-full transition-all duration-300 group-hover:w-[clamp(0.75rem,2vw,1.5rem)]" />
                       <span className="transform group-hover:translate-x-2 transition-transform duration-300">
                         {link.label}
                       </span>
@@ -208,7 +206,7 @@ const Footer = () => {
               variants={fadeInUp}
               className="text-center md:text-left"
             >
-              <h3 className="text-[clamp(1.1rem,2vw,1.3rem)] font-semibold mb-4 sm:mb-6 text-green-400">
+              <h3 className="text-[clamp(1.1rem,2vw,1.3rem)] font-semibold mb-4 sm:mb-6">
                 {t("privacy")}
               </h3>
               <ul className="space-y-[clamp(0.5rem,2vh,1.25rem)]">
@@ -229,14 +227,14 @@ const Footer = () => {
                           ? "noopener noreferrer"
                           : undefined
                       }
-                      className="text-[clamp(1rem,1.5vw,1.2rem)] font-medium text-gray-200 hover:text-green-400 transition-all duration-300 flex items-center justify-center md:justify-start gap-2"
+                      className="text-[clamp(1rem,1.5vw,1.2rem)] font-medium text-white hover:text-sky-600 transition-all duration-300 flex items-center justify-center md:justify-start gap-2"
                       download={
                         page.href.endsWith(".docx")
                           ? "shartnoma.docx"
                           : undefined
                       }
                     >
-                      <span className="w-0 h-0.5 bg-gradient-to-r from-green-400 to-gold-500 rounded-full transition-all duration-300 group-hover:w-[clamp(0.75rem,2vw,1.5rem)]" />
+                      <span className="w-0 h-0.5 bg-gradient-to-r from-sky-400 to-sky-500 rounded-full transition-all duration-300 group-hover:w-[clamp(0.75rem,2vw,1.5rem)]" />
                       <span className="transform group-hover:translate-x-2 transition-transform duration-300">
                         {page.label}
                       </span>
@@ -250,31 +248,31 @@ const Footer = () => {
               variants={fadeInUp}
               className="sm:col-span-2 lg:col-span-2 text-center md:text-left"
             >
-              <h3 className="text-[clamp(1.1rem,2vw,1.3rem)] font-semibold mb-4 sm:mb-6 text-green-500">
+              <h3 className="text-[clamp(1.1rem,2vw,1.3rem)] font-semibold mb-4 sm:mb-6">
                 {t("contact")}
               </h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                   <div className="flex items-center justify-center md:justify-start gap-3">
-                    <div className="w-[clamp(2rem,5vw,2.5rem)] h-[clamp(2rem,5vw,2.5rem)] flex items-center justify-center bg-gradient-to-r from-green-500 to-green-700 rounded-full shadow-lg">
+                    <div className="w-[clamp(2rem,5vw,2.5rem)] h-[clamp(2rem,5vw,2.5rem)] flex items-center justify-center bg-gradient-to-r from-sky-600 to-sky-700 text-white font-semibold rounded-full shadow-md hover:shadow-lg hover:from-sky-700 hover:to-sky-200 transition-all duration-300 transform hover:scale-15">
                       <FiPhoneCall className="text-white text-[clamp(0.80rem,1.5vw,1.2rem)]" />
                     </div>
                     <a
                       href="tel:+998880383838"
-                      className="text-[clamp(1rem,1.5vw,1.2rem)] text-gray-200 hover:text-green-400 transition-colors duration-300"
+                      className="text-[clamp(1rem,1.5vw,1.2rem)] text-gray-200 hover:text-sky-600 transition-colors duration-300"
                     >
                       +998 88 038-38-38
                     </a>
                   </div>
 
                   <div className="flex items-center justify-center md:justify-start gap-3">
-                    <div className="w-[clamp(2rem,5vw,2.5rem)] h-[clamp(2rem,5vw,2.5rem)] flex items-center justify-center bg-gradient-to-r from-green-500 to-green-700 rounded-full shadow-lg">
+                    <div className="w-[clamp(2rem,5vw,2.5rem)] h-[clamp(2rem,5vw,2.5rem)] flex items-center justify-center bg-gradient-to-r from-sky-600 to-sky-700 text-white font-semibold rounded-full shadow-md hover:shadow-lg hover:from-sky-700 hover:to-sky-200 transition-all duration-300 transform hover:scale-15">
                       <FaEnvelope className="text-white text-[clamp(1rem,1.5vw,1.2rem)]" />
                     </div>
                     <a
                       href="mailto:idealjamoa1@gmail.com"
-                      className="text-[clamp(1rem,1.5vw,1.2rem)] text-gray-200 hover:text-green-400 transition-colors duration-300"
+                      className="text-[clamp(1rem,1.5vw,1.2rem)] text-gray-200 hover:text-sky-600 transition-colors duration-300"
                     >
                       idealjamoa1@gmail.com
                     </a>
@@ -285,7 +283,7 @@ const Footer = () => {
                   <div className="flex items-center justify-center mt-1">
                     <FaMapMarkerAlt className="text-white w-[30px] h-[30px] text-[clamp(0.75rem,1.5vw,1rem)]" />
                   </div>
-                  <span className="text-[clamp(1rem,1.5vw,1.2rem)] max-w-[260px] text-gray-300">
+                  <span className="text-[clamp(1rem,1.5vw,1.2rem)] max-w-[260px] text-white">
                     {t("address")}
                   </span>
                 </div>
@@ -297,7 +295,7 @@ const Footer = () => {
             variants={fadeInUp}
             className="pt-4 border-t border-gray-700/30 text-center"
           >
-            <p className="text-[clamp(0.8rem,1.2vw,1rem)] text-gray-400">
+            <p className="text-[clamp(0.8rem,1.2vw,1rem)] text-white">
               © {new Date().getFullYear()} HADIYA TRAVEL.{" "}
               {t("allRightsReserved")}
             </p>

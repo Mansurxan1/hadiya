@@ -286,5 +286,6 @@
   "back_to_home": "Вернуться на главную",
   "unknown": "Неизвестно",
   "payment_successful": "Платеж успешно выполнен",
-  "payment_failed": "Платеж не выполнен"
+  "payment_failed": "Платеж не выполнен",
+  "payWithClick": "Оплатить с помощью Click"
 }
