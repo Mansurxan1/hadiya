@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import { useLang } from "../I18n/useLang";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -16,6 +17,7 @@ import { FiPhoneCall } from "react-icons/fi";
 
 const Footer = () => {
   const { t } = useTranslation();
+  const lang = useLang();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -126,7 +128,7 @@ const Footer = () => {
             className="flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6"
           >
             <Link
-              href="/"
+              href={`/${lang}`}
               className="flex items-center justify-center gap-3 group"
             >
               <div className="relative">

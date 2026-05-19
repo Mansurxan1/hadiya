@@ -13,21 +13,12 @@ const nextConfig = {
       "res.cloudinary.com",
       "economymiddleeast.com",
       "static-maps.yandex.ru",
-      "waterparktenerife.com",
       "neuro.uz",
       "img.poehalisnami.uz"
     ],
   },
   eslint: {
     ignoreDuringBuilds: true,
-  },
-  async rewrites() {
-    return [
-      {
-        source: "/sitemap.xml",
-        destination: "/api/sitemap",
-      },
-    ];
   },
 };
 

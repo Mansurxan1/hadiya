@@ -121,7 +121,8 @@ function generateClickSignature(data: any, secretKey: string): string {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { tourId, tourName, price, userId, userName, userPhone } = body;
+    const { tourId, tourName, price, userId, userName, userPhone, lang } = body;
+    const safeLang = ["uz", "ru", "en"].includes(lang) ? lang : "uz";
 
     console.log('Получен запрос на создание платежа:', body);
 
@@ -181,7 +182,7 @@ export async function POST(request: NextRequest) {
       // Определяем хост и протокол для URL возврата
       const host = request.headers.get('host') || 'www.hadiya-travel.uz';
       const protocol = host.includes('localhost') ? 'http' : 'https';
-      const absoluteReturnUrl = `${protocol}://${host}/payment/success`;
+      const absoluteReturnUrl = `${protocol}://${host}/${safeLang}/payment/success`;
       
       // Сохраняем информацию о заказе
       const orderData: OrderData = {

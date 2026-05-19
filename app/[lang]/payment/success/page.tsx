@@ -3,6 +3,7 @@
 import { useEffect, Suspense, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useTranslation } from "react-i18next";
+import { useLang } from "../../../../I18n/useLang";
 
 const LoadingModal = () => {
   const { t } = useTranslation();
@@ -44,6 +45,7 @@ const SuccessModalContent = ({ onClose }: { onClose: () => void }) => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { t } = useTranslation();
+  const lang = useLang();
 
   const [paymentStatus, setPaymentStatus] = useState<
     "success" | "pending" | "failed" | "unknown"
@@ -129,12 +131,12 @@ const SuccessModalContent = ({ onClose }: { onClose: () => void }) => {
   }, [searchParams, paymentStatus, orderDetails, t]);
 
   const handleGoHome = () => {
-    router.push("/");
+    router.push(`/${lang}`);
     onClose();
   };
 
   const handleRetryPayment = () => {
-    router.push("/payment");
+    router.push(`/${lang}`);
     onClose();
   };
 

@@ -5,8 +5,10 @@ import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { ChevronDown, Phone, Menu, X } from "lucide-react";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLang } from "../I18n/useLang";
+import { SUPPORTED_LANGS } from "../I18n/I18nProvider";
 
 import uz from "../public/uz.jpg";
 import ru from "../public/ru.png";
@@ -18,20 +20,17 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+  const lang = useLang();
 
   useEffect(() => {
-    const savedLang = localStorage.getItem("lang") || "uz";
-    if (i18n.language !== savedLang) {
-      i18n.changeLanguage(savedLang);
-    }
-
     const handleScroll = () => {
       setIsScrolled(window.scrollY >= 20);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [i18n]);
+  }, []);
 
   useEffect(() => {
     if (mobileMenuOpen) {
@@ -41,9 +40,17 @@ export default function Navbar() {
     }
   }, [mobileMenuOpen]);
 
-  const changeLanguage = (lang: string) => {
-    i18n.changeLanguage(lang);
-    localStorage.setItem("lang", lang);
+  const changeLanguage = (newLang: string) => {
+    const segments = (pathname || "/").split("/");
+    if ((SUPPORTED_LANGS as readonly string[]).includes(segments[1])) {
+      segments[1] = newLang;
+    } else {
+      segments.splice(1, 0, newLang);
+    }
+    const newPath = segments.join("/") || `/${newLang}`;
+    document.cookie = `NEXT_LOCALE=${newLang}; path=/; max-age=31536000`;
+    i18n.changeLanguage(newLang);
+    router.push(newPath);
     setDropdownOpen(false);
     setMobileMenuOpen(false);
   };
@@ -114,13 +121,13 @@ export default function Navbar() {
     <nav
       className={`${
         isScrolled
-          ? "bg-gradient-to-br from-white via-sky-500 to-white text-white overflow-hidden transition-all duration-500"
+          ? "bg-gradient-to-br from-white via-sky-500 to-white text-white transition-all duration-500"
           : "bg-transparent"
-      } px-2 py-4 sm:p-5 text-white fixed w-full z-50 transition-all duration-300`}
+      } px-2 py-4 sm:p-5 text-white fixed w-full z-[100] transition-all duration-300`}
     >
       <div className="max-w-[1700px] mx-auto flex justify-between items-center">
         <div className="text-3xl flex items-center">
-          <Link href="/" className="flex items-center">
+          <Link href={`/${lang}`} className="flex items-center">
             <div className="relative group">
               <Image
                 src="/logo.png"
@@ -183,7 +190,7 @@ export default function Navbar() {
             </button>
 
             {dropdownOpen && (
-              <div className="absolute right-0 mt-2 w-40 bg-white text-white rounded-xl shadow-xl overflow-hidden border border-green-500/30 z-50">
+              <div className="absolute right-0 mt-2 w-40 bg-white text-sky-700 font-medium rounded-xl shadow-xl overflow-hidden border border-green-500/30 z-[110]">
                 <button
                   onClick={() => changeLanguage("uz")}
                   className="flex items-center gap-3 w-full px-4 py-3 text-left hover:bg-sky-500/20"

@@ -126,7 +126,7 @@ export default function AboutSection() {
                   className="w-auto"
                 />
               </motion.div>
-              <motion.h1
+              <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
@@ -134,7 +134,7 @@ export default function AboutSection() {
                 className="text-2xl sm:text-3xl mt-4 lg:text-6xl pb-4 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-white to-sky-300 leading-tight tracking-tight"
               >
                 {t("aboutUs.title")}
-              </motion.h1>
+              </motion.h2>
             </div>
 
             <motion.p

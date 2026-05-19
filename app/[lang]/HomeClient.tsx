@@ -9,7 +9,7 @@ import Tour from "@/components/Tour";
 import Testimonials from "@/components/Testimonials";
 import Visa from "@/components/Visa";
 
-const Page = () => {
+const HomeClient = () => {
 
   return (
     <main
@@ -32,4 +32,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default HomeClient;

@@ -15,7 +15,7 @@ const bannerData = [
   {
     id: 2,
     imageUrl:
-      "https://waterparktenerife.com/wp-content/uploads/2023/04/france.jpg.webp",
+      "https://travelsystem.uz/wp-content/uploads/2021/06/eyf_temple_main.jpg",
   },
   {
     id: 3,
@@ -55,11 +55,12 @@ const Banner: React.FC = () => {
                 height={675}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute left-0 top-1/2 transform -translate-y-1/2 text-sky-600 px-4 py-6 sm:px-6 sm:py-8 md:px-12 md:py-16 max-w-full">
-                <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-5 drop-shadow-lg">
+              <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/45 to-black/20" />
+              <div className="absolute left-0 top-1/2 transform -translate-y-1/2 text-white px-4 py-6 sm:px-6 sm:py-8 md:px-12 md:py-16 max-w-full">
+                <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-5 [text-shadow:_0_2px_8px_rgba(0,0,0,0.8)]">
                   {bannerTexts[index]?.title}
                 </h2>
-                <p className="text-base phone-max:text-lg md:text-3xl lg:text-4xl text-sky-400 font-medium w-full sm:w-3/4 drop-shadow-md">
+                <p className="text-base phone-max:text-lg md:text-3xl lg:text-4xl text-white font-medium w-full sm:w-3/4 [text-shadow:_0_2px_6px_rgba(0,0,0,0.8)]">
                   {bannerTexts[index]?.description}
                 </p>
               </div>

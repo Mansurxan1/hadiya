@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Link from "next/link";
+import { useLang } from "../I18n/useLang";
 
 interface Tour {
   id: string;
@@ -24,6 +25,7 @@ const formatPrice = (price: number) => {
 const Tour = () => {
   const { tours, worldtour, medicaltour } = useTourStore();
   const { t } = useTranslation();
+  const lang = useLang();
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -56,7 +58,7 @@ const Tour = () => {
             key={tour.id}
             className="w-full max-w-[300px] sm:max-w-[400px] mr-2.5 sm:mr-5"
           >
-            <Link href={`/tour/${type}/${tour.id}`} className="block">
+            <Link href={`/${lang}/tour/${type}/${tour.id}`} className="block">
               <div className="relative bg-sky-800/50 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-100 cursor-pointer">
                 <div className="relative group">
                   <Image
