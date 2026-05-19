@@ -8,7 +8,7 @@ interface Tour {
   separately: string,
   information: string,
   day: string;
-  price: number;
+  price: number; 
   image: string;
 }
 
