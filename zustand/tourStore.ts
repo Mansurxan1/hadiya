@@ -10,7 +10,7 @@ interface Tour {
   day: string;
   price: number; 
   image: string;
-}
+} 
 
 interface TourState {
   tours: Tour[];
