@@ -4,7 +4,7 @@ interface Tour {
   id: string;
   title: string;
   description: string;
-  services: string,
+  services: string, 
   separately: string,
   information: string,
   day: string;
